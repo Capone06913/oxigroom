@@ -341,13 +341,9 @@ a {
 }
 
 .btn-outline-light {
-  --paw: rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  filter:
-    drop-shadow(0.7px 0 0 rgba(255, 255, 255, 0.9))
-    drop-shadow(-0.7px 0 0 rgba(255, 255, 255, 0.9))
-    drop-shadow(0 0.7px 0 rgba(255, 255, 255, 0.9))
-    drop-shadow(0 -0.7px 0 rgba(255, 255, 255, 0.9));
+  --paw: #F3FBFC;
+  color: var(--primary);
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.16));
 }
 
 .btn-outline-light:hover {
@@ -1000,151 +996,211 @@ a {
   color: var(--primary-hover);
 }
 
-.works-view {
-  width: min(1200px, calc(100% - 48px));
-  margin: 28px auto 0;
-}
-
-.works-stage {
-  position: relative;
-  height: min(520px, 58vh);
-  min-height: 320px;
-  border-radius: var(--radius-lg);
+.works-screen {
+  height: calc(100dvh - var(--works-head, 77px));
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  background: #1a1814;
+  padding: 14px 0 18px;
 }
 
-.works-frame {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+.works-bar {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.works-frame img,
-.works-frame video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 32%;
-  background: #1a1814;
+.works-bar h1 {
+  margin: 8px 0 0;
+  max-width: 22ch;
+  font-family: "Unbounded", "Manrope", sans-serif;
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
-.works-frame [hidden] {
+.works-bar p {
+  margin: 0 0 4px;
+  max-width: 34ch;
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.works-drag {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px max(10vw, 64px) 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.works-drag::-webkit-scrollbar {
   display: none;
 }
 
-.works-frame figcaption {
+.works-drag.is-grabbing {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.work-card {
+  position: relative;
+  flex: 0 0 clamp(340px, 38vw, 520px);
+  height: 86%;
+  margin-left: -110px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #1a1814;
+  scroll-snap-align: center;
+  box-shadow: 0 16px 36px rgba(26, 24, 20, 0.14);
+  transform: rotate(var(--tilt)) scale(0.82) translateY(18px);
+  transform-origin: center center;
+  transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.24, 1), box-shadow 0.45s ease;
+  opacity: 0.9;
+}
+
+.work-card:first-child {
+  margin-left: 0;
+}
+
+.work-card:nth-child(3n + 1) { --tilt: -5deg; }
+.work-card:nth-child(3n + 2) { --tilt: 4deg; }
+.work-card:nth-child(3n) { --tilt: -2.5deg; }
+
+.work-card.is-near {
+  opacity: 1;
+  transform: rotate(var(--tilt)) scale(0.9) translateY(8px);
+}
+
+.work-card.is-center {
+  opacity: 1;
+  z-index: 5;
+  box-shadow: 0 28px 64px rgba(26, 24, 20, 0.24);
+  transform: rotate(0deg) scale(1) translateY(0);
+}
+
+.work-card img,
+.work-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.work-card.is-center video {
+  pointer-events: auto;
+}
+
+.work-card-name {
   position: absolute;
-  left: 16px;
-  bottom: 16px;
-  margin: 0;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2;
   padding: 8px 12px;
   border-radius: var(--radius-pill);
   background: rgba(26, 24, 20, 0.62);
   color: #fff;
   font: 800 14px/1 "Manrope", sans-serif;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.works-frame.is-video figcaption {
-  top: 16px;
-  bottom: auto;
+.work-card.is-center .work-card-name {
+  opacity: 1;
 }
 
-.works-arrow {
+.work-card-play {
   position: absolute;
-  top: 50%;
   z-index: 2;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.works-arrow--prev { left: 14px; }
-.works-arrow--next { right: 14px; }
-
-.works-film {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-  overflow-x: auto;
-  padding: 4px 2px 10px;
-  scroll-snap-type: x proximity;
-  scrollbar-color: rgba(12, 110, 120, 0.45) transparent;
-}
-
-.works-thumb {
-  position: relative;
-  flex: 0 0 84px;
-  height: 84px;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--quiet);
-  cursor: pointer;
-  scroll-snap-align: center;
-  transition: flex-basis 0.35s cubic-bezier(0.22, 0.8, 0.24, 1);
-}
-
-.works-thumb.is-on {
-  flex-basis: 156px;
-  border-color: var(--primary);
-}
-
-.works-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.works-thumb-play {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 22px;
-  height: 22px;
+  top: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #fff;
   pointer-events: none;
 }
 
-.works-thumb-play::after {
+.work-card-play::after {
   content: "";
   position: absolute;
-  top: 6px;
-  left: 8px;
+  top: 10px;
+  left: 14px;
   border-style: solid;
-  border-width: 5px 0 5px 8px;
+  border-width: 8px 0 8px 12px;
   border-color: transparent transparent transparent #1a1814;
 }
 
+.work-card.is-center .work-card-play {
+  display: none;
+}
+
 @media (max-width: 800px) {
-  .works-stage {
-    height: 46vh;
-    min-height: 240px;
+  .works-screen {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 28px;
   }
 
-  .works-thumb,
-  .works-thumb.is-on {
-    flex-basis: 72px;
-    height: 72px;
+  .works-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .works-bar h1 {
+    max-width: none;
+  }
+
+  .works-bar p {
+    text-align: left;
+  }
+
+  .works-drag {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    padding: 12px 16px 0;
+    cursor: auto;
+    scroll-snap-type: none;
+  }
+
+  .work-card,
+  .work-card.is-near,
+  .work-card.is-center {
+    flex: none;
+    width: 100%;
+    height: 68vh;
+    margin: 0 0 16px;
+    transform: none;
+    opacity: 1;
+  }
+
+  .work-card-name {
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .works-thumb {
+  .work-card {
     transition: none;
   }
 }
+
 
 /* ===== BEFORE / AFTER — HORIZONTAL REEL & LIGHTBOX ===== */
 .ba-section {
@@ -2072,6 +2128,51 @@ body.ba-lb-open {
   gap: 12px;
 }
 
+.school-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 2px;
+  padding: 14px 8px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.school-more strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.school-more span {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.school-more svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--primary-vivid);
+}
+
+.school-more:hover,
+.school-more:focus-visible {
+  padding-left: 14px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.school-more:focus-visible {
+  outline: 3px solid #F7F6F3;
+  outline-offset: 2px;
+}
+
 /* Блок обучения: плотная карточка, без растягивания на весь экран */
 @media (min-width: 1101px) {
   #obuchenie.section {
@@ -2150,19 +2251,19 @@ body.ba-lb-open {
   }
 
   #obuchenie .school-panel {
-    padding: 22px 22px 16px;
-    gap: 12px;
+    padding: 26px 26px 18px;
+    gap: 16px;
     justify-content: flex-start;
   }
 
   #obuchenie .school-panel h2 {
-    font-size: clamp(28px, 2.2vw, 36px);
+    font-size: clamp(30px, 2.4vw, 40px);
     line-height: 1.05;
   }
 
   #obuchenie .school-intro {
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.45;
   }
 
   #obuchenie .format-list {
@@ -2171,18 +2272,26 @@ body.ba-lb-open {
   }
 
   #obuchenie .format-link {
-    padding: 9px 6px;
-    gap: 12px;
+    padding: 16px 8px;
+    gap: 16px;
   }
 
   #obuchenie .format-link strong {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   #obuchenie .format-link span {
-    margin-top: 2px;
-    font-size: 13px;
-    line-height: 1.35;
+    margin-top: 4px;
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+
+  #obuchenie .school-more {
+    padding: 16px 8px 2px;
+  }
+
+  #obuchenie .school-more strong {
+    font-size: 17px;
   }
 
   #obuchenie .school-honest {
