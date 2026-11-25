@@ -1,0 +1,12 @@
+{
+  "provider": "kie.ai",
+  "model": "gpt-image-2-text-to-image",
+  "taskId": "c5f7f5c10cf4081ef0c5d52e08e0e585",
+  "state": "success",
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "creditsConsumed": 10,
+  "image_url": "https://tempfile.aiquickdraw.com/a2/c5f7f5c10cf4081ef0c5d52e08e0e585_1795561363700.png",
+  "local_path": "teya-memory/design/assets/oxigroom-gpt-image-2-hook.png",
+  "request_path": "teya-memory/design/assets/oxigroom-gpt-image-2-request.json"
+}

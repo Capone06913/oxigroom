@@ -1,0 +1,84 @@
+{
+  "sections": [
+    {
+      "id": "front-page:hero",
+      "required_background": "poster spa_02.jpg full bleed with left scrim",
+      "required_visuals": ["poster", "bichon cutout"],
+      "required_cards": 0,
+      "required_motion": "poster first; video src empty; cursor follow on fine pointer only",
+      "required_transition_in": "sticky header",
+      "required_transition_out": "paws under pack",
+      "fidelity_blockers": ["video claimed as filmed", "bichon covering the booking button", "css dog instead of cutout"]
+    },
+    {
+      "id": "front-page:pack",
+      "required_background": "#E6E5E1",
+      "required_visuals": ["york", "poodle", "spitz", "bichon cutout", "maltese", "cat"],
+      "required_cards": 0,
+      "required_motion": "none",
+      "required_transition_in": "overlap hero 56px",
+      "required_transition_out": "48px radius into services",
+      "fidelity_blockers": ["word in front of animals", "hamster turtle parrot", "synthetic pack replacing studio photos"]
+    },
+    {
+      "id": "front-page:services",
+      "required_background": "#E6E5E1",
+      "required_visuals": ["five distinct work photos"],
+      "required_cards": 5,
+      "required_motion": "photo zoom inside crop on hover, max 1.03",
+      "required_transition_in": "rounded cap",
+      "required_transition_out": "straight gray into studios",
+      "fidelity_blockers": ["text-only cards", "prices on cards"]
+    },
+    {
+      "id": "front-page:education",
+      "required_background": "turquoise column plus gray",
+      "required_visuals": ["trainer.jpg", "student thumbs"],
+      "required_cards": 0,
+      "required_motion": "marquee pauses on hover and stops for reduced motion",
+      "required_transition_in": "photo overlaps turquoise column on desktop",
+      "required_transition_out": "blog cards",
+      "fidelity_blockers": ["champion.jpg", "years and counts"]
+    },
+    {
+      "id": "page-dogs:before-after",
+      "required_background": "#E6E5E1",
+      "required_visuals": ["before_grooming_02.jpg", "after_grooming_02.jpg"],
+      "required_cards": 3,
+      "required_motion": "none",
+      "required_transition_in": "text H1",
+      "required_transition_out": "excludes panel",
+      "fidelity_blockers": ["generic text template", "price"]
+    },
+    {
+      "id": "page-cats:limit",
+      "required_background": "#D7E8EA panel",
+      "required_visuals": ["linka_03.jpg"],
+      "required_cards": 3,
+      "required_motion": "none",
+      "required_transition_in": "text H1",
+      "required_transition_out": "studios",
+      "fidelity_blockers": ["body clip promise", "anesthesia", "stethoscope"]
+    },
+    {
+      "id": "page-complex:portraits",
+      "required_background": "#E6E5E1",
+      "required_visuals": ["complex_grooming_01.jpg", "complex_grooming_02.jpg"],
+      "required_cards": 3,
+      "required_motion": "none",
+      "required_transition_in": "text H1",
+      "required_transition_out": "eight-step list from the current site",
+      "fidelity_blockers": ["single text column", "invented price"]
+    },
+    {
+      "id": "page-education:hands",
+      "required_background": "turquoise column",
+      "required_visuals": ["trainer.jpg", "at least three student thumbs"],
+      "required_cards": 5,
+      "required_motion": "student strip",
+      "required_transition_in": "portrait overlaps column",
+      "required_transition_out": "not-promised panel",
+      "fidelity_blockers": ["haircut-page look", "diploma", "income", "champion.jpg"]
+    }
+  ]
+}

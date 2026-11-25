@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Груминг собак и кошек в Саратове — студии ОксиГрум и обучение</title>
+  <meta name="description" content="Груминг собак и кошек в двух студиях ОксиГрум в Саратове: комплекс, гигиена, тримминг, экспресс-линька и очное обучение. Запись в WhatsApp, Telegram и Max.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="index.html" aria-current="page">
+        <img src="https://oxigroom.ru/assets/img/logo-dark.png" alt="ОксиГрум — студия груминга">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+      <nav class="nav" id="site-nav" aria-label="Разделы сайта">
+        <div class="drop">
+          <button class="drop-btn" type="button" aria-expanded="false" aria-controls="menu-groom">
+            Груминг
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="drop-panel" id="menu-groom" hidden>
+            <a href="gruming-sobak.html">Собаки</a>
+            <a href="gruming-koshek.html">Кошки</a>
+            <a href="kompleksnyj-gruming.html">Комплексный груминг</a>
+            <a href="gigienicheskij-gruming.html">Гигиенический груминг</a>
+            <a href="spa-uhod.html">SPA-уход</a>
+            <a href="ekspress-linka.html">Экспресс-линька</a>
+            <a href="trimming.html">Тримминг</a>
+          </div>
+        </div>
+        <div class="drop">
+          <button class="drop-btn" type="button" aria-expanded="false" aria-controls="menu-breeds">
+            Породы
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="drop-panel" id="menu-breeds" hidden>
+            <a href="strizhka-jorka.html">Йорк</a>
+            <a href="strizhka-shpica.html">Шпиц</a>
+            <a href="strizhka-pudelya.html">Пудель</a>
+            <a href="strizhka-maltipu.html">Мальтипу</a>
+            <a href="strizhka-bishona.html">Бишон-фризе</a>
+            <a href="strizhka-maltez.html">Мальтийская болонка</a>
+            <a href="strizhka-shi-tcu.html">Ши-тцу</a>
+            <a href="strizhka-chihuahua.html">Чихуахуа</a>
+          </div>
+        </div>
+        <div class="drop">
+          <button class="drop-btn" type="button" aria-expanded="false" aria-controls="menu-school">
+            Обучение
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="drop-panel" id="menu-school" hidden>
+            <a href="obuchenie.html">Все форматы</a>
+            <a href="s-nulya.html">Груминг с нуля</a>
+            <a href="individualno.html">Индивидуально</a>
+            <a href="master-klass.html">Мастер-класс для мастеров</a>
+            <a href="poprobovat.html">Попробовать на одной собаке</a>
+            <a href="dlya-vladelcev.html">Для владельцев собак</a>
+          </div>
+        </div>
+        <a class="nav-link" href="o-nas.html">О нас</a>
+        <a class="nav-link" href="index.html#blog">Блог</a>
+        <div class="drop">
+          <button class="drop-btn" type="button" aria-expanded="false" aria-controls="menu-contacts">
+            Контакты
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="drop-panel" id="menu-contacts" hidden>
+            <a href="kontakty.html">Адреса салонов</a>
+            <a href="2-ya-sadovaya.html">2-я Садовая, 106 к9</a>
+            <a href="panchenko.html">Ул. им. Панченко К.П., 6</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-tools">
+        <a class="phone" href="tel:+79272266313">+7 927 226-63-13</a>
+        <a class="btn btn-sm" href="https://wa.me/79272266313">Запись</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. ПЕРВЫЙ ЭКРАН — ПОЛНОЭКРАННОЕ ВИДЕО -->
+    <section class="hero--full" aria-label="Главный экран студии ОксиГрум">
+      <video class="hero-video hero-video-bg" src="assets/oxigroom-hero.mp4" poster="assets/oxigroom-hero-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1>Студия <span class="hero-accent">груминга</span> в&nbsp;Саратове</h1>
+          <div class="hero-bottom">
+            <div class="hero-meta">
+              <h2 class="hero-sub">Бережный уход за собаками и кошками и очное обучение в двух филиалах</h2>
+              <p class="hero-hook">Подбираем программу под породу и состояние шерсти: от мытья в три этапа и стрижки до тримминга жёсткой шерсти и экспресс-линьки. Заранее рассказываем, какие процедуры входят в комплекс и чего мы не делаем, чтобы уход прошёл спокойно для питомца.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn hero-cta" href="https://wa.me/79272266313">Запись</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. РАБОТЫ С КРУПНЫМ СЛОВОМ «ОКСИГРУМ» -->
+    <section class="pack" aria-label="Работы студии ОксиГрум">
+      <p class="word" aria-hidden="true">ОксиГрум</p>
+      <div class="wrap pack-row">
+        <a class="pack-item" href="strizhka-jorka.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/after_grooming_02.jpg" alt="Йорк после груминга в ОксиГрум">
+            <figcaption>Йорк</figcaption>
+          </figure>
+        </a>
+        <a class="pack-item" href="strizhka-pudelya.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/groomed_03.jpg" alt="Пудель после стрижки в ОксиГрум">
+            <figcaption>Пудель</figcaption>
+          </figure>
+        </a>
+        <a class="pack-item" href="strizhka-shpica.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/groomed_spits_01.jpg" alt="Шпиц после стрижки в ОксиГрум">
+            <figcaption>Шпиц</figcaption>
+          </figure>
+        </a>
+        <a class="pack-item" href="strizhka-maltez.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/complex_grooming_02.jpg" alt="Мальтийская болонка после комплексного груминга">
+            <figcaption>Болонка</figcaption>
+          </figure>
+        </a>
+        <a class="pack-item" href="strizhka-shi-tcu.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/hygene_grooming_01.jpg" alt="Ши-тцу после гигиенического груминга">
+            <figcaption>Ши-тцу</figcaption>
+          </figure>
+        </a>
+        <a class="pack-item" href="gruming-koshek.html">
+          <figure>
+            <img src="https://oxigroom.ru/assets/img/linka_03.jpg" alt="Кошка после экспресс-линьки в ОксиГрум">
+            <figcaption>Кошка</figcaption>
+          </figure>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. УСЛУГИ — ПЛАКАТЫ РАЗНОГО РАЗМЕРА -->
+    <section class="section" id="uslugi">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Груминг собак и кошек в Саратове</h2>
+          <p>Выберите программу — на каждой странице разобрано, что входит в процедуру и чего в ней нет.</p>
+        </div>
+
+        <div class="poster-grid">
+          <a class="poster poster--w7" href="kompleksnyj-gruming.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/complex_grooming_01.jpg" alt="Собака после комплексного груминга в студии ОксиГрум">
+            <div class="poster-body">
+              <h3>Комплексный груминг</h3>
+              <p>Мытьё в три этапа, сушка с вычёсыванием, стрижка корпуса и головы, уши, лапы и когти.</p>
+              <span class="btn btn-white btn-sm">Комплекс</span>
+            </div>
+          </a>
+
+          <a class="poster poster--w5" href="gruming-sobak.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/groomed_03.jpg" alt="Пудель после породной стрижки в ОксиГрум">
+            <div class="poster-body">
+              <h3>Стрижка и груминг собак</h3>
+              <p>Йорк, пудель, шпиц, мальтипу, бишон, болонка, ши-тцу и чихуахуа в двух студиях Саратова.</p>
+              <span class="btn btn-white btn-sm">Собаки</span>
+            </div>
+          </a>
+
+          <a class="poster poster--w5-mid" href="gruming-koshek.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/linka_03.jpg" alt="Британская кошка и вычесанный подшёрсток после экспресс-линьки">
+            <div class="poster-body">
+              <h3>Груминг кошек</h3>
+              <p>Мытьё, вычёс подшёрстка, когти и уши — без обещания стрижки корпуса и без ветприёма.</p>
+              <span class="btn btn-white btn-sm">Кошки</span>
+            </div>
+          </a>
+
+          <a class="poster poster--split poster--w7-split" href="gigienicheskij-gruming.html">
+            <div class="poster-split-copy">
+              <div>
+                <h3>Гигиенический груминг</h3>
+                <p>Мытьё, сушка, полная стрижка головы, лапы, когти и уши — стрижки корпуса в этой услуге нет.</p>
+              </div>
+              <span class="btn btn-sm">Гигиена</span>
+            </div>
+            <div class="poster-split-photo">
+              <img src="https://oxigroom.ru/assets/img/hygene_grooming_02.jpg" alt="Собака после гигиенического груминга со стрижкой головы">
+            </div>
+          </a>
+
+          <a class="poster poster--w4" href="spa-uhod.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/spa_03.jpg" alt="Йорк в гидромассажной SPA-ванне">
+            <div class="poster-body">
+              <h3>SPA-уход</h3>
+              <p>Озон-ванна, уходовая маска, гидромассаж и сушка для мягкой, воздушной шерсти.</p>
+              <span class="btn btn-white btn-sm">SPA</span>
+            </div>
+          </a>
+
+          <a class="poster poster--w5-low" href="ekspress-linka.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/linka_01.jpg" alt="Самоед после процедуры экспресс-линьки">
+            <div class="poster-body">
+              <h3>Экспресс-линька</h3>
+              <p>Трёхэтапное мытьё, паровая баня с маской и вычёс подшёрстка — не стрижка под ноль.</p>
+              <span class="btn btn-white btn-sm">Линька</span>
+            </div>
+          </a>
+
+          <a class="poster poster--w3" href="trimming.html">
+            <img class="poster-bg" src="https://oxigroom.ru/assets/img/trimming_02.jpg" alt="Жесткошёрстная такса во время тримминга">
+            <div class="poster-body">
+              <h3>Тримминг</h3>
+              <p>Удаление созревшей шерсти у шнауцера, фокстерьера и таксы.</p>
+              <span class="btn btn-white btn-sm">Тримминг</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ДО И ПОСЛЕ — ГОРИЗОНТАЛЬНАЯ ЛЕНТА -->
+    <section class="section ba-section" id="do-posle">
+      <div class="wrap">
+        <div class="section-head ba-head">
+          <h2>До и после груминга в Саратове</h2>
+        </div>
+
+        <div class="ba-viewport">
+          <button class="ba-arrow ba-arrow--prev" type="button" data-ba-dir="-1" aria-label="Предыдущий кадр" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <div class="ba-rail" id="ba-rail" tabindex="0" aria-label="Лента работ до и после">
+            <article class="ba-slide" data-ba-index="0">
+              <div class="ba-stage ba-diptych" role="button" tabindex="0" aria-label="Открыть крупно: Йоркширский терьер">
+                <figure class="ba-frame ba-frame--before">
+                  <img src="https://oxigroom.ru/assets/img/before_grooming_02.jpg" alt="Йоркширский терьер до груминга в студии ОксиГрум" draggable="false">
+                  <figcaption class="ba-tag">До</figcaption>
+                </figure>
+                <figure class="ba-frame ba-frame--after">
+                  <img src="https://oxigroom.ru/assets/img/after_grooming_02.jpg" alt="Йоркширский терьер после груминга в студии ОксиГрум" draggable="false">
+                  <figcaption class="ba-tag ba-tag--after">После</figcaption>
+                </figure>
+              </div>
+              <p class="ba-slide-caption">Йоркширский терьер</p>
+            </article>
+
+            <article class="ba-slide" data-ba-index="1">
+              <div class="ba-stage ba-diptych" role="button" tabindex="0" aria-label="Открыть крупно: Пудель">
+                <figure class="ba-frame ba-frame--before">
+                  <img src="https://oxigroom.ru/assets/img/before_grooming_01.jpg" alt="Пудель до груминга в студии ОксиГрум" draggable="false">
+                  <figcaption class="ba-tag">До</figcaption>
+                </figure>
+                <figure class="ba-frame ba-frame--after">
+                  <img src="https://oxigroom.ru/assets/img/after_grooming_01.jpg" alt="Пудель после груминга в студии ОксиГрум" draggable="false">
+                  <figcaption class="ba-tag ba-tag--after">После</figcaption>
+                </figure>
+              </div>
+              <p class="ba-slide-caption">Пудель</p>
+            </article>
+
+            <article class="ba-slide" data-ba-index="2">
+              <div class="ba-stage ba-video-stage" role="button" tabindex="0" aria-label="Открыть крупно: Студия ОксиГрум">
+                <video class="ba-video" src="assets/oxigroom-hero.mp4" poster="assets/oxigroom-hero-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Ролик студии ОксиГрум"></video>
+              </div>
+              <p class="ba-slide-caption">Студия ОксиГрум</p>
+            </article>
+
+            <article class="ba-slide" data-ba-index="3">
+              <div class="ba-stage ba-video-stage" role="button" tabindex="0" aria-label="Открыть крупно: Пудель после груминга">
+                <video class="ba-video" src="assets/maps/ya-video-01.mp4" poster="assets/maps/ya-video-01.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Пудель после груминга в студии ОксиГрум"></video>
+              </div>
+              <p class="ba-slide-caption">Пудель после груминга</p>
+            </article>
+
+            <article class="ba-slide" data-ba-index="4">
+              <div class="ba-stage ba-video-stage" role="button" tabindex="0" aria-label="Открыть крупно: Ши-тцу после груминга">
+                <video class="ba-video" src="assets/maps/ya-video-02.mp4" poster="assets/maps/ya-video-02.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Ши-тцу после груминга в студии ОксиГрум"></video>
+              </div>
+              <p class="ba-slide-caption">Ши-тцу после груминга</p>
+            </article>
+          </div>
+
+          <button class="ba-arrow ba-arrow--next" type="button" data-ba-dir="1" aria-label="Следующий кадр">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="ba-lightbox" id="ba-lightbox" role="dialog" aria-modal="true" aria-label="Крупный просмотр работ" hidden>
+        <div class="ba-lightbox-backdrop" data-ba-close></div>
+        <button class="ba-lightbox-close" type="button" data-ba-close aria-label="Закрыть просмотр">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <button class="ba-lightbox-arrow ba-lightbox-arrow--prev" type="button" data-lb-dir="-1" aria-label="Предыдущий кадр">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="ba-lightbox-body" id="ba-lightbox-body">
+          <div class="ba-lightbox-stage" id="ba-lightbox-stage"></div>
+          <div class="ba-lightbox-bar">
+            <p class="ba-lightbox-caption" id="ba-lightbox-caption"></p>
+            <span class="ba-lightbox-counter" id="ba-lightbox-counter"></span>
+          </div>
+        </div>
+        <button class="ba-lightbox-arrow ba-lightbox-arrow--next" type="button" data-lb-dir="1" aria-label="Следующий кадр">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <script>
+        (function () {
+          var section = document.getElementById('do-posle');
+          var rail = document.getElementById('ba-rail');
+          if (!section || !rail) return;
+
+          var prevBtn = section.querySelector('[data-ba-dir="-1"]');
+          var nextBtn = section.querySelector('[data-ba-dir="1"]');
+          var slides = Array.prototype.slice.call(rail.querySelectorAll('.ba-slide'));
+          var lightbox = document.getElementById('ba-lightbox');
+          var lbStage = document.getElementById('ba-lightbox-stage');
+          var lbCaption = document.getElementById('ba-lightbox-caption');
+          var lbCounter = document.getElementById('ba-lightbox-counter');
+          var lbCloseBtn = lightbox ? lightbox.querySelector('.ba-lightbox-close') : null;
+          var lbPrevBtn = lightbox ? lightbox.querySelector('[data-lb-dir="-1"]') : null;
+          var lbNextBtn = lightbox ? lightbox.querySelector('[data-lb-dir="1"]') : null;
+
+          var items = slides.map(function (slide) {
+            var captionEl = slide.querySelector('.ba-slide-caption');
+            var caption = captionEl ? captionEl.textContent.trim() : '';
+            var video = slide.querySelector('video');
+            if (video) {
+              return {
+                type: 'video',
+                src: video.getAttribute('src'),
+                poster: video.getAttribute('poster') || '',
+                alt: video.getAttribute('aria-label') || caption,
+                caption: caption
+              };
+            }
+            var imgs = slide.querySelectorAll('.ba-frame img');
+            return {
+              type: 'pair',
+              before: { src: imgs[0] ? imgs[0].getAttribute('src') : '', alt: imgs[0] ? imgs[0].getAttribute('alt') : '' },
+              after: { src: imgs[1] ? imgs[1].getAttribute('src') : '', alt: imgs[1] ? imgs[1].getAttribute('alt') : '' },
+              caption: caption
+            };
+          });
+
+          function stepSize() {
+            var slide = slides[0];
+            if (!slide) return 600;
+            var gap = parseFloat(window.getComputedStyle(rail).columnGap || window.getComputedStyle(rail).gap) || 20;
+            return slide.getBoundingClientRect().width + gap;
+          }
+
+          function syncButtons() {
+            var maxScroll = Math.max(0, rail.scrollWidth - rail.clientWidth);
+            var atStart = rail.scrollLeft <= 4;
+            var atEnd = rail.scrollLeft >= maxScroll - 4;
+            if (prevBtn) {
+              prevBtn.hidden = atStart;
+              prevBtn.disabled = atStart;
+            }
+            if (nextBtn) {
+              nextBtn.hidden = atEnd;
+              nextBtn.disabled = atEnd;
+            }
+          }
+
+          function slideBy(dir) {
+            rail.scrollBy({ left: dir * stepSize(), behavior: 'smooth' });
+          }
+
+          if (prevBtn) prevBtn.addEventListener('click', function () { slideBy(-1); });
+          if (nextBtn) nextBtn.addEventListener('click', function () { slideBy(1); });
+
+          /* Drag-to-scroll мышью (в обе стороны), обычный клик без протяжки не листает */
+          var isMouseDown = false;
+          var didDrag = false;
+          var suppressClick = false;
+          var dragStartX = 0;
+          var dragStartScroll = 0;
+          var DRAG_THRESHOLD = 8;
+
+          rail.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+          });
+
+          rail.addEventListener('pointerdown', function (e) {
+            if (e.pointerType !== 'mouse' || e.button !== 0) return;
+            isMouseDown = true;
+            didDrag = false;
+            dragStartX = e.clientX;
+            dragStartScroll = rail.scrollLeft;
+          });
+
+          window.addEventListener('pointermove', function (e) {
+            if (!isMouseDown) return;
+            var dx = e.clientX - dragStartX;
+            if (!didDrag && Math.abs(dx) >= DRAG_THRESHOLD) {
+              didDrag = true;
+              rail.classList.add('is-dragging');
+            }
+            if (didDrag) {
+              e.preventDefault();
+              rail.scrollLeft = dragStartScroll - dx;
+              syncButtons();
+            }
+          });
+
+          function endMouseDrag() {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            if (didDrag) {
+              rail.classList.remove('is-dragging');
+              suppressClick = true;
+              window.setTimeout(function () { suppressClick = false; }, 80);
+              syncButtons();
+            }
+            didDrag = false;
+          }
+
+          window.addEventListener('pointerup', endMouseDrag);
+          window.addEventListener('pointercancel', endMouseDrag);
+
+          /* Колёсико мыши */
+          rail.addEventListener('wheel', function (e) {
+            if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+            var maxScroll = rail.scrollWidth - rail.clientWidth;
+            if (maxScroll <= 0) return;
+            var atStart = rail.scrollLeft <= 1 && e.deltaY < 0;
+            var atEnd = rail.scrollLeft >= maxScroll - 1 && e.deltaY > 0;
+            if (atStart || atEnd) return;
+            e.preventDefault();
+            rail.scrollLeft += e.deltaY;
+          }, { passive: false });
+
+          var rafId = 0;
+          rail.addEventListener('scroll', function () {
+            if (rafId) return;
+            rafId = window.requestAnimationFrame(function () {
+              rafId = 0;
+              syncButtons();
+            });
+          }, { passive: true });
+
+          window.addEventListener('resize', syncButtons);
+          syncButtons();
+
+          /* Крупный просмотр (лайтбокс) */
+          var activeIndex = 0;
+          var lastTrigger = null;
+
+          function renderLightbox(index) {
+            if (!lbStage || !items.length) return;
+            activeIndex = (index + items.length) % items.length;
+            var item = items[activeIndex];
+            lbStage.innerHTML = '';
+
+            if (item.type === 'video') {
+              var videoWrap = document.createElement('div');
+              videoWrap.className = 'ba-lb-video-wrap';
+              var vid = document.createElement('video');
+              vid.className = 'ba-lb-video';
+              vid.src = item.src;
+              if (item.poster) vid.poster = item.poster;
+              vid.muted = true;
+              vid.defaultMuted = true;
+              vid.loop = true;
+              vid.playsInline = true;
+              vid.autoplay = true;
+              vid.setAttribute('muted', '');
+              vid.setAttribute('loop', '');
+              vid.setAttribute('playsinline', '');
+              vid.setAttribute('aria-label', item.alt);
+              videoWrap.appendChild(vid);
+              lbStage.appendChild(videoWrap);
+              var p = vid.play();
+              if (p && typeof p.catch === 'function') p.catch(function () {});
+            } else {
+              var pair = document.createElement('div');
+              pair.className = 'ba-lb-pair';
+
+              var f1 = document.createElement('figure');
+              f1.className = 'ba-lb-frame';
+              var img1 = document.createElement('img');
+              img1.src = item.before.src;
+              img1.alt = item.before.alt;
+              img1.draggable = false;
+              var cap1 = document.createElement('figcaption');
+              cap1.className = 'ba-tag';
+              cap1.textContent = 'До';
+              f1.appendChild(img1);
+              f1.appendChild(cap1);
+
+              var f2 = document.createElement('figure');
+              f2.className = 'ba-lb-frame';
+              var img2 = document.createElement('img');
+              img2.src = item.after.src;
+              img2.alt = item.after.alt;
+              img2.draggable = false;
+              var cap2 = document.createElement('figcaption');
+              cap2.className = 'ba-tag ba-tag--after';
+              cap2.textContent = 'После';
+              f2.appendChild(img2);
+              f2.appendChild(cap2);
+
+              pair.appendChild(f1);
+              pair.appendChild(f2);
+              lbStage.appendChild(pair);
+            }
+
+            if (lbCaption) lbCaption.textContent = item.caption;
+            if (lbCounter) lbCounter.textContent = (activeIndex + 1) + ' / ' + items.length;
+          }
+
+          function openLightbox(index, triggerEl) {
+            if (!lightbox) return;
+            lastTrigger = triggerEl || document.activeElement;
+            renderLightbox(index);
+            lightbox.hidden = false;
+            document.body.classList.add('ba-lb-open');
+            if (lbCloseBtn) lbCloseBtn.focus();
+          }
+
+          function closeLightbox() {
+            if (!lightbox || lightbox.hidden) return;
+            var vid = lbStage ? lbStage.querySelector('video') : null;
+            if (vid) vid.pause();
+            lightbox.hidden = true;
+            document.body.classList.remove('ba-lb-open');
+            if (lastTrigger && typeof lastTrigger.focus === 'function') {
+              lastTrigger.focus();
+            }
+            lastTrigger = null;
+          }
+
+          slides.forEach(function (slide, idx) {
+            var stage = slide.querySelector('.ba-stage');
+            if (!stage) return;
+            stage.addEventListener('click', function () {
+              if (suppressClick) return;
+              openLightbox(idx, stage);
+            });
+            stage.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(idx, stage);
+              }
+            });
+          });
+
+          if (lightbox) {
+            lightbox.addEventListener('click', function (e) {
+              if (e.target.closest('[data-ba-close]')) {
+                closeLightbox();
+              }
+            });
+          }
+
+          if (lbPrevBtn) lbPrevBtn.addEventListener('click', function () { renderLightbox(activeIndex - 1); });
+          if (lbNextBtn) lbNextBtn.addEventListener('click', function () { renderLightbox(activeIndex + 1); });
+
+          /* Листание в лайтбоксе мышью (протяжка) и пальцем (свайп) */
+          if (lbStage) {
+            var lbPointerDown = false;
+            var lbStartX = 0;
+
+            lbStage.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+            lbStage.addEventListener('pointerdown', function (e) {
+              if (e.pointerType === 'mouse' && e.button !== 0) return;
+              lbPointerDown = true;
+              lbStartX = e.clientX;
+            });
+
+            window.addEventListener('pointerup', function (e) {
+              if (!lbPointerDown) return;
+              lbPointerDown = false;
+              var dx = e.clientX - lbStartX;
+              if (Math.abs(dx) >= 45) {
+                renderLightbox(dx < 0 ? activeIndex + 1 : activeIndex - 1);
+              }
+            });
+
+            window.addEventListener('pointercancel', function () {
+              lbPointerDown = false;
+            });
+          }
+
+          document.addEventListener('keydown', function (e) {
+            if (!lightbox || lightbox.hidden) return;
+            if (e.key === 'Escape') {
+              e.preventDefault();
+              closeLightbox();
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              renderLightbox(activeIndex + 1);
+            } else if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              renderLightbox(activeIndex - 1);
+            }
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- 5. ДВЕ СТУДИИ -->
+    <section class="section" id="studii">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Две студии ОксиГрум в Саратове</h2>
+          <p>Приём идёт по предварительной записи. Выберите удобный адрес — телефон и мессенджеры общие.</p>
+        </div>
+        <div class="studios-grid">
+          <a class="place" href="2-ya-sadovaya.html">
+            <img src="assets/maps/ya-01.jpg" alt="Фасад студии ОксиГрум на 2-й Садовой, 106 к9">
+            <div class="place-info">
+              <span class="place-address">2-я Садовая улица, 106 к9</span>
+              <span class="place-note">Открыть страницу студии и карты</span>
+            </div>
+          </a>
+          <a class="place" href="panchenko.html">
+            <img src="https://oxigroom.ru/assets/img/groomed_chihuahua.jpg" alt="Чихуахуа после груминга в студии на улице Панченко">
+            <div class="place-info">
+              <span class="place-address">Улица им. Панченко К.П., 6</span>
+              <span class="place-note">Открыть страницу студии и карты</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ОБУЧЕНИЕ (ПЕРЕСОБРАННЫЙ БЛОК) -->
+    <section class="section" id="obuchenie">
+      <div class="wrap">
+        <div class="school">
+          <div class="school-media">
+            <figure class="trainer-card">
+              <img src="https://oxigroom.ru/assets/img/trainer.jpg" alt="Преподаватель Оксана с йоркширским терьером в студии ОксиГрум">
+              <figcaption>
+                <strong>Оксана</strong>
+                Директор студии, грумер и преподаватель. <a href="o-nas.html">О нас</a>
+              </figcaption>
+            </figure>
+            <div class="hands-block">
+              <p class="hands-label">Практика руками в студии — занятия с учениками</p>
+              <div class="hands-grid">
+                <img src="https://oxigroom.ru/assets/img/trainings/thumb/01.jpg" alt="Ученик на практическом занятии по грумингу в ОксиГрум">
+                <img src="https://oxigroom.ru/assets/img/trainings/thumb/03.jpg" alt="Отработка стрижки руками ученика в студии">
+                <img src="https://oxigroom.ru/assets/img/trainings/thumb/05.jpg" alt="Очное занятие в студии груминга ОксиГрум">
+                <img src="https://oxigroom.ru/assets/img/trainings/thumb/07.jpg" alt="Работа с инструментами на очном обучении в Саратове">
+              </div>
+            </div>
+          </div>
+
+          <div class="school-panel">
+            <span class="eyebrow eyebrow-teal">Очное обучение · Саратов</span>
+            <h2>Обучение грумингу в Саратове</h2>
+            <p class="school-intro">Живые занятия на собаках в студии: постановка руки, мытьё, разбор косметики и инструментов, породные стрижки, экспресс-линька и тримминг.</p>
+
+            <ul class="format-list">
+              <li>
+                <a class="format-link" href="s-nulya.html">
+                  <div>
+                    <strong>Груминг с нуля</strong>
+                    <span>Очная база: популярные породы, линька, тримминг, мытьё и инструменты</span>
+                  </div>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="format-link" href="individualno.html">
+                  <div>
+                    <strong>Индивидуальные курсы с нуля</strong>
+                    <span>Один на один с преподавателем и разбором всех шагов</span>
+                  </div>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="format-link" href="master-klass.html">
+                  <div>
+                    <strong>Мастер-классы для мастеров</strong>
+                    <span>Точечный разбор сложных моментов для тех, кто уже стрижёт</span>
+                  </div>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="format-link" href="poprobovat.html">
+                  <div>
+                    <strong>Формат «попробовать» на одной собаке</strong>
+                    <span>Поработать с одной собакой в студии, чтобы понять, ваше ли это</span>
+                  </div>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+              <li>
+                <a class="format-link" href="dlya-vladelcev.html">
+                  <div>
+                    <strong>Курс для владельцев собак</strong>
+                    <span>Уход и аккуратная стрижка своего питомца дома</span>
+                  </div>
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </li>
+            </ul>
+
+            <p class="school-honest">Честная граница: это очная практика в студии. Государственный диплом, фиксированный доход и трудоустройство на сайте не обещаем — программу и стоимость обсуждаем в переписке.</p>
+
+            <div class="school-actions">
+              <a class="btn btn-white" href="obuchenie.html">Обучение</a>
+              <a class="btn btn-outline-light" href="https://wa.me/79272266313">Спросить</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ВОПРОСЫ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Вопросы о груминге в Саратове</h2>
+          <p>Короткие ответы до записи — без мелкого шрифта и скрытых условий.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Чем комплексный груминг отличается от гигиенического?</summary>
+            <p>В обе программы входит мытьё в три этапа, сушка с вычёсыванием, стрижка головы, чистка ушей, окантовка лап, стрижка когтей, выстригание шерсти между подушечками и гигиена паха. Отличие в том, что в комплексе мастер стрижёт туловище, а в гигиеническом уходе корпус не трогают.</p>
+          </details>
+          <details>
+            <summary>Что ОксиГрум делает с кошкой?</summary>
+            <p>Для кошек мы проводим экспресс-линьку: три этапа мытья, нанесение маски, распаривание, тщательный вычёс подшёрстка, стрижку когтей и чистку ушей. Стрижку корпуса под машинку, седацию и наркоз для кошек мы не выполняем.</p>
+          </details>
+          <details>
+            <summary>Это ветеринарная клиника или студия груминга?</summary>
+            <p>ОксиГрум — это именно студия груминга, а не ветеринарная клиника. Мы занимаемся эстетическим и гигиеническим уходом, включая озон-ванну и гидромассаж для собак, но не ставим диагнозы, не лечим и не проводим медицинские процедуры.</p>
+          </details>
+          <details>
+            <summary>Где находятся студии и есть ли цены на сайте?</summary>
+            <p>Мы работаем по двум адресам в Саратове: 2-я Садовая улица, 106 к9 и улица им. Панченко К.П., 6. Прайса на сайте нет — стоимость зависит от породы и состояния шерсти, поэтому точную сумму и свободное время подскажем по телефону +7 927 226-63-13 или в WhatsApp, Telegram и Max.</p>
+          </details>
+          <details>
+            <summary>После обучения выдают государственный диплом?</summary>
+            <p>Нет, мы проводим очную практику в студии и не выдаём документы государственного образца, лицензии, а также не гарантируем трудоустройство или конкретный уровень дохода. Сроки и стоимость выбранного формата обучения обсуждаем индивидуально в переписке.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ОТЗЫВЫ: веер карточек -->
+    <section class="section" id="otzyvy" aria-label="Отзывы об ОксиГрум">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Отзывы об ОксиГрум в Саратове</h2>
+          <p>Тексты ниже студия уже публикует на oxigroom.ru как отзывы с Яндекс Карт и 2ГИС. Оценка на сайт не перенесена.</p>
+        </div>
+        <div class="fan" data-fan>
+          <div class="fan-stage">
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>Были недавно у Оксаны на стрижке. Всё супер! До визита шерсть торчала во все стороны, а дома постоянно летел подшерсток. У нашего шпица густая шерсть, быстро сваливается и плохо расчёсывается дома. После ухода она стала воздушной, мягкой и совершенно без колтунов.</p>
+              <footer><strong>Анастасия</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>Доброго дня! Хочу оставить отзыв про «ОксиГрум». Наконец-то в нашем районе появилось место, где можно привести собаку в порядок рядом с домом! Помыли нашу американскую акиту просто чудесно, она вышла чистенькая, ухоженная и очень довольная.</p>
+              <footer><strong>Наталья</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>Хочу выразить огромную благодарность грумеру Оксане! Недавно я впервые доверила своего питомца этому специалисту, и результатом осталась очень довольна. У нас это была первая процедура гигиены, скоро будем делать полный комплекс.</p>
+              <footer><strong>Ирина</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>В первый раз обратились именно к вам, так как недалеко от дома и очень хорошие отзывы. Честно говоря, наш пёсик ну очень активный. Но несмотря на это вы справились с нашим непоседой, очень прекрасно его постригли, мы очень довольны. Оксана, спасибо вам огромное. Теперь мы только к вам.</p>
+              <footer><strong>Лера</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>Приводила корги на экспресс-линьку. Результатом осталась очень довольна! Домой вернулся чистый ребёнок, больше не линяет и вкусно пахнет. Спасибо за вашу работу.</p>
+              <footer><strong>Ася</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">
+              <p>Проходила базовый курс грумера с нуля. Очень понравилось обучение, как преподавателя рекомендую.</p>
+              <footer><strong>Ксюша</strong><span>Яндекс Карты</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Все было замечательно. Пёс преобразился. Его даже дома не узнал сначала мой второй питомец.</p>
+              <footer><strong>Дмитрий</strong><span>2ГИС</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Мне понравилось, как стригут. Предварительно согласовали длину, бережно почистили ушки и постригли когти. И что немаловажно, животное не запуганное после процедур.</p>
+              <footer><strong>Вероника</strong><span>2ГИС</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Все очень понравилось! Записывалась на стрижку очень шерстяной кошки. Сделали все очень быстро, без порезов и царапин. Очень красиво оформили хвостик и мордочку.</p>
+              <footer><strong>Юлия</strong><span>2ГИС</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Спасибо вам огромное: для малыша в 4 месяца сделать такую красоту большой труд, когда он постоянно вертится. Всё быстро, комфортно и с особой лаской к щенку и хозяйке.</p>
+              <footer><strong>Елена</strong><span>2ГИС</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Спасибо, всё понравилось! Быстро, качественно, с любовью. Придём ещё. Доченьке понравилось, по ней было видно, что стресса никакого не испытала.</p>
+              <footer><strong>Екатерина</strong><span>2ГИС</span></footer>
+            </article>
+            <article class="fan-card" data-href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">
+              <p>Я привела собаку, которая была без груминга 3 месяца, и забрала красавчика. Наконец меня поняли, как именно я хотела, чтобы постригли. Теперь только к вам.</p>
+              <footer><strong>Дарья</strong><span>2ГИС</span></footer>
+            </article>
+          </div>
+          <div class="fan-bar">
+            <button class="fan-arrow" type="button" data-fan-prev aria-label="Предыдущий отзыв">‹</button>
+            <p class="fan-count" data-fan-count aria-live="polite">1 / 12</p>
+            <button class="fan-arrow" type="button" data-fan-next aria-label="Следующий отзыв">›</button>
+            <button class="btn" type="button" data-fan-open>Отзыв</button>
+          </div>
+          <p class="fan-hint">Нажмите на карточку сбоку — она выйдет вперёд. Нажмите на переднюю — откроется текст целиком.</p>
+          <div class="reviews-actions">
+            <a class="btn btn-secondary" href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/">Яндекс</a>
+            <a class="btn btn-secondary" href="https://2gis.ru/saratov/firm/70000001103631619/tab/reviews">2ГИС</a>
+          </div>
+        </div>
+        <dialog class="review-dialog" id="review-dialog">
+          <button class="review-dialog-close" type="button" data-review-close aria-label="Закрыть">×</button>
+          <p class="review-dialog-kicker" data-review-source></p>
+          <h3 data-review-name></h3>
+          <p data-review-text></p>
+          <a class="btn" data-review-link href="https://yandex.ru/maps/org/oksigrum/216979961568/reviews/" target="_blank" rel="noopener noreferrer">Карта</a>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- 9. БЛОГ -->
+    <section class="section" id="blog">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Блог о груминге собак и кошек</h2>
+          <p>Ключевые темы для владельцев питомцев и тех, кто присматривается к очному обучению.</p>
+        </div>
+        <div class="blog-grid">
+          <a class="blog-card" href="gruming-koshek.html">
+            <span class="blog-tag">Тема · уход за кошкой</span>
+            <h3>Колтуны у кошки: что делать владельцу</h3>
+            <span class="blog-go">Перейти в раздел кошек →</span>
+          </a>
+          <a class="blog-card" href="gigienicheskij-gruming.html">
+            <span class="blog-tag">Тема · выбор процедуры</span>
+            <h3>Чем гигиенический груминг отличается от комплексного</h3>
+            <span class="blog-go">Сравнить состав услуг →</span>
+          </a>
+          <a class="blog-card" href="obuchenie.html">
+            <span class="blog-tag">Тема · обучение в студии</span>
+            <h3>Как стать грумером</h3>
+            <span class="blog-go">Открыть форматы обучения →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html"><img src="https://oxigroom.ru/assets/img/logo-dark.png" alt="ОксиГрум — студия груминга"></a>
+          <p>Студия груминга собак и кошек и очное обучение в Саратове.</p>
+          <p>2-я Садовая улица, 106 к9<br>Улица им. Панченко К.П., 6</p>
+          <p><a class="phone" href="tel:+79272266313">+7 927 226-63-13</a></p>
+        </div>
+        <div class="footer-col">
+          <h3>Груминг</h3>
+          <ul>
+            <li><a href="gruming-sobak.html">Груминг собак</a></li>
+            <li><a href="gruming-koshek.html">Груминг кошек</a></li>
+            <li><a href="kompleksnyj-gruming.html">Комплексный груминг</a></li>
+            <li><a href="gigienicheskij-gruming.html">Гигиенический груминг</a></li>
+            <li><a href="spa-uhod.html">SPA-уход</a></li>
+            <li><a href="ekspress-linka.html">Экспресс-линька</a></li>
+            <li><a href="trimming.html">Тримминг</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Обучение и студии</h3>
+          <ul>
+            <li><a href="obuchenie.html">Очное обучение</a></li>
+            <li><a href="s-nulya.html">Груминг с нуля</a></li>
+            <li><a href="poprobovat.html">Формат «попробовать»</a></li>
+            <li><a href="o-nas.html">О нас</a></li>
+            <li><a href="kontakty.html">Контакты двух студий</a></li>
+            <li><a href="2-ya-sadovaya.html">2-я Садовая, 106 к9</a></li>
+            <li><a href="panchenko.html">Ул. им. Панченко К.П., 6</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Запись и площадки</h3>
+          <ul>
+            <li><a href="https://wa.me/79272266313">WhatsApp</a></li>
+            <li><a href="https://t.me/oxigrooms">Telegram</a></li>
+            <li><a href="https://max.ru/u/f9LHodD0cOKCS_yJAbNtXgjz-zbHqq-utoqnsSBWBrMc8lgUaSluBXdJNBs">Max</a></li>
+            <li><a href="https://vk.ru/oxigroom_saratov">ВКонтакте</a></li>
+            <li><a href="https://yandex.ru/maps/org/oksigrum/216979961568/">Яндекс Карты</a></li>
+            <li><a href="https://2gis.ru/saratov/firm/70000001103631619">2ГИС</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ОксиГрум, Саратов</span>
+        <span>
+          <a href="kontakty.html#legal-privacy">Политика конфиденциальности</a> ·
+          <a href="kontakty.html#legal-cookies">Политика cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie" id="cookie">
+    <p>Сайт использует cookies. <a href="kontakty.html#legal-cookies">Политика cookies</a></p>
+    <button class="btn btn-sm" type="button" id="cookie-ok">Принять</button>
+  </div>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

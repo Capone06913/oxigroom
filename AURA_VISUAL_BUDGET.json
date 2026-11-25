@@ -1,0 +1,59 @@
+{
+  "pages": [
+    {
+      "slug": "/",
+      "template": "front-page.php",
+      "minimum_colored_sections": 3,
+      "minimum_meaningful_image_assets": 8,
+      "minimum_decorative_motifs": 4,
+      "minimum_overlap_compositions": 2,
+      "minimum_custom_cards": 5,
+      "minimum_non_rectangular_transitions": 2,
+      "forbidden_simplifications": ["white hero only", "one photo only", "plain text cards", "clinic layout", "pet shop grid", "champion.jpg"]
+    },
+    {
+      "slug": "/gruming-sobak/",
+      "template": "page-gruming-sobak.php",
+      "minimum_colored_sections": 2,
+      "minimum_meaningful_image_assets": 2,
+      "minimum_decorative_motifs": 2,
+      "minimum_overlap_compositions": 1,
+      "minimum_custom_cards": 3,
+      "minimum_non_rectangular_transitions": 1,
+      "forbidden_simplifications": ["default text page", "price table", "no before-after"]
+    },
+    {
+      "slug": "/gruming-koshek/",
+      "template": "page-gruming-koshek.php",
+      "minimum_colored_sections": 2,
+      "minimum_meaningful_image_assets": 1,
+      "minimum_decorative_motifs": 2,
+      "minimum_overlap_compositions": 1,
+      "minimum_custom_cards": 3,
+      "minimum_non_rectangular_transitions": 1,
+      "forbidden_simplifications": ["body clip promise", "stethoscope", "text-only"]
+    },
+    {
+      "slug": "/kompleksnyj-gruming/",
+      "template": "page-kompleksnyj-gruming.php",
+      "minimum_colored_sections": 2,
+      "minimum_meaningful_image_assets": 2,
+      "minimum_decorative_motifs": 2,
+      "minimum_overlap_compositions": 1,
+      "minimum_custom_cards": 3,
+      "minimum_non_rectangular_transitions": 1,
+      "forbidden_simplifications": ["single column of text", "invented price"]
+    },
+    {
+      "slug": "/obuchenie/",
+      "template": "page-obuchenie.php",
+      "minimum_colored_sections": 2,
+      "minimum_meaningful_image_assets": 3,
+      "minimum_decorative_motifs": 2,
+      "minimum_overlap_compositions": 1,
+      "minimum_custom_cards": 5,
+      "minimum_non_rectangular_transitions": 1,
+      "forbidden_simplifications": ["same hero as a haircut page", "champion.jpg", "diploma promise", "income promise"]
+    }
+  ]
+}

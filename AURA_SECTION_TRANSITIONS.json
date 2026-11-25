@@ -1,0 +1,74 @@
+{
+  "transitions": [
+    {
+      "id": "transition-hero-to-pack",
+      "from_section": "front-page:hero",
+      "to_section": "front-page:pack",
+      "type": "object-overlap",
+      "geometry": "Секция стаи заходит на hero на 56px. Лапы бишона оказываются под серым фоном. Голова остаётся в кадре.",
+      "layers": "hero z-index 1, dog z-index 2, pack z-index 3",
+      "implementation": "negative margin and z-index",
+      "desktop": "overlap 56px",
+      "tablet": "overlap 40px",
+      "mobile": "overlap 28px, dog max-width 42vw, CTA stays clear",
+      "source_reference": "BRIEF hero cutout into the next block",
+      "must_replicate": true
+    },
+    {
+      "id": "transition-word-behind-pack",
+      "from_section": "front-page:pack-word",
+      "to_section": "front-page:pack-photos",
+      "type": "layered section backgrounds",
+      "geometry": "Слово шире контейнера, overflow hidden, фото спереди",
+      "layers": "word z-index 0, photos z-index 1",
+      "implementation": "css overflow",
+      "desktop": "18vw type",
+      "tablet": "22vw type",
+      "mobile": "28vw type, still cropped",
+      "source_reference": "обрезанная надпись за стаей",
+      "must_replicate": true
+    },
+    {
+      "id": "transition-pack-to-services",
+      "from_section": "front-page:pack",
+      "to_section": "front-page:services",
+      "type": "custom-svg",
+      "geometry": "Верх услуг — скругление 48px, не синусоида и не клякса. Цвет фона тот же серый, карточки белые.",
+      "layers": "services panel sits on gray",
+      "implementation": "css border-radius",
+      "desktop": "radius 48px 48px 0 0",
+      "tablet": "radius 32px",
+      "mobile": "radius 24px",
+      "source_reference": "круглая геометрия кнопки, продолженная в стык секций",
+      "must_replicate": true
+    },
+    {
+      "id": "transition-service-excludes",
+      "from_section": "service:includes",
+      "to_section": "service:excludes",
+      "type": "layered section backgrounds",
+      "geometry": "Тихая бирюзовая плашка #D7E8EA с радиусом 20px между составом и адресами",
+      "layers": "panel on gray page",
+      "implementation": "css",
+      "desktop": "full content width",
+      "tablet": "full content width",
+      "mobile": "full width minus 24px",
+      "source_reference": "шаблон услуги, блок чего нет",
+      "must_replicate": true
+    },
+    {
+      "id": "transition-education-column",
+      "from_section": "page-obuchenie:intro",
+      "to_section": "page-obuchenie:formats",
+      "type": "object-overlap",
+      "geometry": "Бирюзовая колонка слева на 28% ширины, портрет Оксаны перекрывает её правый край на 24px",
+      "layers": "column z-index 0, photo z-index 1",
+      "implementation": "css grid overlap",
+      "desktop": "overlap 24px",
+      "tablet": "column on top, photo below, overlap 0",
+      "mobile": "stack",
+      "source_reference": "обучение отличается руками, не новой палитрой",
+      "must_replicate": true
+    }
+  ]
+}

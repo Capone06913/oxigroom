@@ -1,0 +1,34 @@
+{
+  "source_reference": "BRIEF-DIZAYN-OXIGROOM.md plus existing oxigroom.ru photos",
+  "minimum_ready_assets_for_homepage": 8,
+  "minimum_meaningful_image_assets_homepage": 8,
+  "asset_instance_count_homepage": 13,
+  "visual_zones": [
+    {"id": "hero-poster", "page": "/", "section": "hero", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "hero-poster-spa-02", "asset_instance_id": "hero-poster", "can_reuse_asset_id": null, "status": "ready"},
+    {"id": "hero-bichon", "page": "/", "section": "hero", "type": "cutout", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "requires_cutout": true, "implementation": "kie-remove-bg", "asset_registry_id": "cursor-bichon", "asset_instance_id": "cursor-bichon", "can_reuse_asset_id": null, "status": "ready"},
+    {"id": "pack-york", "page": "/", "section": "pack", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-york", "asset_instance_id": "pack-york", "status": "ready"},
+    {"id": "pack-poodle", "page": "/", "section": "pack", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-poodle", "asset_instance_id": "pack-poodle", "status": "ready"},
+    {"id": "pack-spitz", "page": "/", "section": "pack", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-spitz", "asset_instance_id": "pack-spitz", "status": "ready"},
+    {"id": "pack-bichon", "page": "/", "section": "pack", "type": "cutout", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": false, "implementation": "kie-remove-bg", "asset_registry_id": "cursor-bichon", "asset_instance_id": "pack-bichon-reuse", "can_reuse_asset_id": "cursor-bichon", "reuse_reason": "Нет своего фото бишона на oxigroom.ru. Тот же cutout занимает пустое место породы и не выдаётся за кадр работы.", "status": "ready"},
+    {"id": "pack-maltese", "page": "/", "section": "pack", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-maltese", "asset_instance_id": "pack-maltese", "status": "ready"},
+    {"id": "pack-cat", "page": "/", "section": "pack", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-cat", "asset_instance_id": "pack-cat", "status": "ready"},
+    {"id": "card-complex", "page": "/", "section": "services", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-complex", "asset_instance_id": "card-complex", "status": "ready"},
+    {"id": "card-hygiene", "page": "/", "section": "services", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-hygiene", "asset_instance_id": "card-hygiene", "status": "ready"},
+    {"id": "card-spa", "page": "/", "section": "services", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-spa", "asset_instance_id": "card-spa", "status": "ready"},
+    {"id": "card-shed", "page": "/", "section": "services", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-shed", "asset_instance_id": "card-shed", "status": "ready"},
+    {"id": "card-trimming", "page": "/", "section": "services", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-trimming", "asset_instance_id": "card-trimming", "status": "ready"},
+    {"id": "education-trainer", "page": "/", "section": "education", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "trainer", "asset_instance_id": "education-trainer", "status": "ready"},
+    {"id": "dogs-split", "page": "/gruming-sobak/", "section": "before-after", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "dogs-before-after", "asset_instance_id": "dogs-split", "status": "ready"},
+    {"id": "cats-photo", "page": "/gruming-koshek/", "section": "hero", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "pack-cat", "asset_instance_id": "cats-photo", "reuse_reason": "Тот же подтверждённый кадр линьки кошки, другая страница.", "status": "ready"},
+    {"id": "complex-portraits", "page": "/kompleksnyj-gruming/", "section": "hero", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "service-complex", "asset_instance_id": "complex-portraits", "status": "ready"},
+    {"id": "school-hands", "page": "/obuchenie/", "section": "hero", "type": "photo", "source_has_image": true, "required_for_fidelity": true, "counts_as_meaningful_image": true, "implementation": "existing-confirmed-asset", "asset_registry_id": "trainer", "asset_instance_id": "school-hands", "status": "ready"}
+  ],
+  "pages": [
+    {"slug": "/", "minimum_meaningful_image_assets": 8, "asset_instance_count": 13},
+    {"slug": "/gruming-sobak/", "minimum_meaningful_image_assets": 2, "asset_instance_count": 2},
+    {"slug": "/gruming-koshek/", "minimum_meaningful_image_assets": 1, "asset_instance_count": 1},
+    {"slug": "/kompleksnyj-gruming/", "minimum_meaningful_image_assets": 2, "asset_instance_count": 2},
+    {"slug": "/obuchenie/", "minimum_meaningful_image_assets": 3, "asset_instance_count": 4}
+  ],
+  "blockers": []
+}

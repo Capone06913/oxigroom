@@ -1,0 +1,26 @@
+{
+  "mode": "brief-mood-not-pixel-copy",
+  "primary_source": "teya-memory/design/BRIEF-DIZAYN-OXIGROOM.md",
+  "photo_source": "https://oxigroom.ru/assets/img/",
+  "copy_source": "teya-memory/source/teksty-sajta-polnostyu.md",
+  "url_source": "teya-memory/semantic-core/oxigroom-2026-11-24/06-url-map.csv",
+  "mood_notes": [
+    "Референс 4 petdesigner: серый, бирюза, обрезанная надпись, один герой, круглая кнопка",
+    "Референсы 2 и 6: плотная стая, животные смотрят на зрителя"
+  ],
+  "reference_image_files_on_disk": false,
+  "must_not": [
+    "ветклиника",
+    "стетоскоп",
+    "зоомагазин",
+    "продажа животных",
+    "английский UI",
+    "чужие телефоны",
+    "цены",
+    "часы",
+    "диплом",
+    "стаж",
+    "чемпион",
+    "Пхукет"
+  ]
+}

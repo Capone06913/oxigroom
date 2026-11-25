@@ -1,0 +1,15 @@
+{
+  "provider": "kie.ai",
+  "model": "google/gemini-omni-flash-1-2",
+  "taskId": "2021edddef8d740b018ec7f85f1878a5",
+  "state": "success",
+  "duration_sec": 15,
+  "aspect_ratio": "9:16",
+  "resolution": "1080p",
+  "seed": 47215,
+  "creditsConsumed": 150,
+  "costTime_sec": 156,
+  "video_url": "https://tempfile.aiquickdraw.com/v/2021edddef8d740b018ec7f85f1878a5_0_1795560597.mp4",
+  "local_path": "teya-memory/design/assets/oxigroom-hero-15s.mp4",
+  "request_path": "teya-memory/design/assets/oxigroom-hero-15s-request.json"
+}

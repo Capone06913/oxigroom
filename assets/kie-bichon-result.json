@@ -1,0 +1,14 @@
+{
+  "provider": "kie.ai",
+  "create_model": "gpt-image-2-text-to-image",
+  "create_task_id": "5bca3004d096ec9cd5b2fa89fee8f645",
+  "create_state": "success",
+  "generated_image_url": "https://tempfile.aiquickdraw.com/images/chatgpt/file_00000000a88481f5ac2b7d20f29b537b.png",
+  "background_removal_model": "recraft/remove-background",
+  "background_removal_task_id": "758e1ddaf9f7edec9d9bcb2df3c6994b",
+  "background_removal_state": "success",
+  "transparent_image_url": "https://tempfile.aiquickdraw.com/js/g4/5d0a5879a527.png",
+  "local_path": "teya-memory/design/assets/bichon-cursor.png",
+  "prompt": "Photorealistic full-body white Bichon Frise, small companion dog after a gentle groom, dense curly white coat, dark eyes and dark nose, sitting on its haunches, all four paws visible, head turned slightly toward the viewer, calm and kind, no collar, no clothes, no accessories, no people, no text, no watermark, no logo, isolated on a flat pure white background, studio soft light, sharp focus, not cropped at the legs or paws.",
+  "pack_generated": false
+}

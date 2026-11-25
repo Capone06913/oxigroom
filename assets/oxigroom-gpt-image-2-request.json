@@ -1,0 +1,8 @@
+{
+  "model": "gpt-image-2-text-to-image",
+  "input": {
+    "prompt": "Photoreal editorial photograph, horizontal 16:9, full-frame 35mm lens, f/2.8, 1/1000 second shutter. A real grooming studio, not a pet portrait and not a pet shop.\n\nThe hook is the dog's eyes locked on the camera while the groom is unfinished. A wet Yorkshire terrier lies on a pale gray steel grooming table. It stares straight into the lens. The left half of its face is still long, damp and shaggy. The right half is freshly scissored into a sharp clean line, so the before and after are visible on one face. One water bead sits on the black nose. Individual wet strands, not smooth CGI fur.\n\nThe wow is frozen in the air. A groomer's forearms, warm skin and short clean nails, wear a turquoise cotton apron #0C6E78. One hand drives a metal slicker comb upward. A thick cloud of cut cream undercoat hangs between the comb and the window, every hair separate, backlit. Open steel grooming scissors and a small pile of cut fur lie on the wet table. Soft contact shadow under the dog. Large window key light from the left, no flash, no beauty light.\n\nThe studio is named on the wall. Light gray wall #E6E5E1. Large flat matte black letters spell exactly OXIGROOM, the full word, centered, readable, not cropped, no glow, no extra letters, no Cyrillic.\n\nLived-in grooming room: damp table texture, a loop of a grooming arm in the soft background, no people faces. Natural sensor grain.\n\nNo cute pose, no playing cat, no waving paw, no pet shop, no products for sale, no price tag, no cartoon, no 3D render, no plastic fur, no stethoscope, no cages, no logo mark other than the wall word OXIGROOM.",
+    "aspect_ratio": "16:9",
+    "resolution": "2K"
+  }
+}

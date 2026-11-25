@@ -1,0 +1,37 @@
+{
+  "concept_version": "1",
+  "cover_family": "duotone_overlay",
+  "cover_family_label_ru": "Бирюзовый дуотон поверх фото работы",
+  "allowed_cover_families_considered": ["duotone_overlay", "documentary_reportage", "editorial_photo"],
+  "cover_family_selection_rationale": "Местная студия и сильный бирюзовый цвет. Дуотон держит серию в одной краске и не спорит с живыми фото. Репортаж честнее по свету, но слабее склеивает обложки. Editorial слишком кабинетный.",
+  "secondary_cover_families": [],
+  "prompt_assembly_mode": "prefix_scene_suffix",
+  "global_prompt_prefix": "Brand blog cover, 16:9, duotone overlay of a real grooming studio photograph, colors light gray #E6E5E1 and turquoise #0C6E78, warm black shadows, no text, no letters, no logo, no watermark, no stethoscope, no pet shop, no price tag, no English labels.",
+  "global_prompt_suffix": "Consistent side light, subject in the right 55 percent, empty turquoise band on the left 20 percent, thumbnail-safe center, photoreal, not a cartoon, not a veterinary clinic.",
+  "global_negative_prompt": "text, letters, watermark, logo, price, stethoscope, hamster, parrot, turtle, cartoon, extra limbs, blurry",
+  "composition_lock": {
+    "aspect_ratio": "16:9",
+    "target_size": "1200x675",
+    "layout_description": "turquoise band left 20 percent, subject right 55 percent, gray field",
+    "thumbnail_safe_zone": "center-right"
+  },
+  "color_lock": {
+    "background": "#E6E5E1",
+    "primary_accent": "#0C6E78",
+    "secondary_accent": "#1A1814"
+  },
+  "fixed_elements": ["duotone turquoise", "left color band", "no text in the image", "same light direction"],
+  "variable_per_topic": ["animal or hands", "tool or coat detail", "calm or practical mood"],
+  "topic_archetypes": {
+    "informational": {"scene_bias": "one calm subject, gray field"},
+    "how_to": {"scene_bias": "hands and a grooming tool, no medical device"},
+    "comparison": {"scene_bias": "two coats or two tools side by side inside the same duotone"},
+    "parent_guide": {"scene_bias": "one dog or cat looking at camera, trustworthy, no fear"}
+  },
+  "style_anchor": {
+    "status": "skipped",
+    "local_path": "",
+    "prompt_used": "",
+    "reason": "Kie в этом проходе использован для бишона. Обложки генерирует Excalibur по этому концепту."
+  }
+}

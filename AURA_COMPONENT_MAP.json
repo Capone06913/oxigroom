@@ -1,0 +1,84 @@
+{
+  "library": "user-21st",
+  "archive_21_rar": "not unpacked; MCP search was enough",
+  "rejected_templates": ["pet shop catalog", "veterinary clinic", "buy a pet"],
+  "header": {
+    "pattern": "disclosure-tree",
+    "top_level": ["logo", "Груминг", "Породы", "Обучение", "Блог", "Контакты", "phone", "Записаться"],
+    "forbidden": "Один ряд всех услуг в шапке",
+    "mobile": "То же дерево в панели «Меню», не каша ссылок. aria-expanded, мышь, клавиатура, Escape."
+  },
+  "selected": [
+    {
+      "id": 969,
+      "name": "Interactive Hover Button",
+      "author": "dillionverma",
+      "source": "https://21st.dev/r/dillionverma/interactive-hover-button",
+      "use": "Жест наведения у записи: подпись остаётся, фон уже бирюзовый и только темнеет. Прозрачное состояние покоя из демо не переносить.",
+      "code_retrieved": true
+    },
+    {
+      "id": 622,
+      "name": "Bento Grid",
+      "author": "kokonutd",
+      "source": "https://21st.dev/r/kokonutd/bento-grid",
+      "use": "Ритм сетки услуг: 1 колонка на телефоне, 3 на десктопе, лёгкий подъём карточки. Контент демо (аналитика, теги) не переносить. В карточках фото работ.",
+      "code_retrieved": true
+    },
+    {
+      "id": 7274,
+      "name": "Mouse follow animations",
+      "author": "reuno-ui",
+      "source": "https://21st.dev/r/reuno-ui/mouse-follow-animations",
+      "use": "Крупный бишон на столе первого экрана: далеко дышит, рядом поворачивает голову, у «Записаться» садится сбоку и не закрывает кнопку, в простое наклоняется. В стаю пород не ставить. Системный курсор не подменять.",
+      "code_retrieved": false,
+      "note": "Код не забран: дневной лимит 21st исчерпан. Берётся поведение, не чужой JSX."
+    },
+    {
+      "id": 2112,
+      "name": "Mouse Following Eyes",
+      "author": "preetsuthar17",
+      "source": "https://21st.dev/r/preetsuthar17/mouse-following-eyes",
+      "use": "Дальняя зона: персонаж смотрит в сторону курсора и стрижки на постере.",
+      "code_retrieved": false
+    },
+    {
+      "id": 2883,
+      "name": "Cursor Follower",
+      "author": "uilayout.contact",
+      "source": "https://21st.dev/r/uilayout.contact/cursor-follower",
+      "use": "Плавное следование с отступом, чтобы персонаж садился сбоку кнопки.",
+      "code_retrieved": false
+    },
+    {
+      "id": 17354,
+      "name": "Features Card",
+      "author": "mokshithgujjeti",
+      "source": "https://21st.dev/r/mokshithgujjeti/features-card",
+      "use": "Карточка услуги: изображение сверху, короткий текст, ссылка на отдельный URL.",
+      "code_retrieved": false
+    }
+  ],
+  "seen_and_rejected": [
+    {
+      "id": 43936,
+      "name": "3D Spider Cursor Follower",
+      "reason": "Паук и паутина не относятся к студии груминга."
+    },
+    {
+      "id": 35186,
+      "name": "Dash Button",
+      "reason": "На hover теряет заливку. Основная запись должна оставаться залитой."
+    },
+    {
+      "id": 44880,
+      "name": "Glossy Slider Call Button",
+      "reason": "Кислотно-зелёный слайдер и чужой характер кнопки."
+    },
+    {
+      "id": 24664,
+      "name": "Cursor Multi-follow",
+      "reason": "Кольца вокруг курсора спорят с бишоном и перекрывают интерфейс."
+    }
+  ]
+}

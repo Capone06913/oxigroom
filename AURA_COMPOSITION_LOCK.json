@@ -1,0 +1,34 @@
+{
+  "homepage_order": ["header", "hero", "pack", "services", "studios", "education", "blog", "footer"],
+  "h1": {
+    "text": "Студия груминга в Саратове",
+    "render": "text",
+    "count": 1
+  },
+  "decorative_word": {
+    "text": "ОксиГрум",
+    "font": "Unbounded",
+    "aria_hidden": true,
+    "placement": "behind pack photos, cropped left and right"
+  },
+  "hero_layers": [
+    "poster spa_02.jpg",
+    "left scrim",
+    "h1 and lede",
+    "round primary button",
+    "bichon cutout, paws under pack"
+  ],
+  "video": {
+    "src": null,
+    "poster": "https://oxigroom.ru/assets/img/spa_02.jpg",
+    "claimed_as_filmed": false
+  },
+  "cta": {
+    "label": "Записаться",
+    "href": "https://wa.me/79272266313",
+    "shape": "circle-pill",
+    "fill": "#0C6E78",
+    "character_may_overlap": false
+  },
+  "pack_breeds_front_to_back_word": ["york", "poodle", "spitz", "bichon", "maltese", "cat"]
+}

@@ -1,0 +1,49 @@
+{
+  "source": "brief words, not a saved poster file",
+  "shapes": [
+    {
+      "id": "booking-circle",
+      "type": "capsule",
+      "geometry": "border-radius 9999px, height 52px, padding 14px 22px, solid fill, no stroke",
+      "shadow": "none",
+      "rotation": "0",
+      "must_replicate": true
+    },
+    {
+      "id": "cropped-word",
+      "type": "overflow crop",
+      "geometry": "Unbounded word wider than viewport, overflow hidden, no outline",
+      "shadow": "none",
+      "must_replicate": true
+    },
+    {
+      "id": "photo-portrait",
+      "type": "rounded rectangle",
+      "geometry": "3:4, radius 20px, no black stroke",
+      "shadow": "0 10px 28px rgba(26,24,20,0.08) only when photo overlaps the giant word",
+      "must_replicate": true
+    },
+    {
+      "id": "service-card",
+      "type": "rounded rectangle",
+      "geometry": "radius 20px, white fill, hairline #D4D2CC",
+      "shadow": "none",
+      "must_replicate": true
+    },
+    {
+      "id": "exclude-panel",
+      "type": "rounded rectangle",
+      "geometry": "radius 20px, fill #D7E8EA, no icon of a medical cross",
+      "shadow": "none",
+      "must_replicate": true
+    },
+    {
+      "id": "pack-overlap-cap",
+      "type": "large radius section cap",
+      "geometry": "top of services uses a 48px radius cut into the gray pack, not a sine wave and not a blob",
+      "shadow": "none",
+      "must_replicate": true
+    }
+  ],
+  "not_in_source": ["star", "diamond", "stethoscope", "blob", "sunburst", "torn paper", "brutal black offset shadow"]
+}
