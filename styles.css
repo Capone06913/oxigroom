@@ -2285,6 +2285,38 @@ a.breed-card:hover {
   line-height: 1.55;
 }
 
+.who-table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+.who-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.who-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 800;
+  padding: 0 0 10px;
+}
+
+.who-table th,
+.who-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.who-table th {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
 .info-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
