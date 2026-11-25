@@ -346,3 +346,16 @@
     }
   });
 })();
+
+(function () {
+  document.querySelectorAll('.faq').forEach(function (root) {
+    root.querySelectorAll('details').forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (!item.open) return;
+        root.querySelectorAll('details').forEach(function (other) {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  });
+})();

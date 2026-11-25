@@ -227,6 +227,19 @@ a {
   color: var(--primary);
 }
 
+.channel-link {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.channel-link:hover {
+  color: var(--primary-hover);
+}
+
 .menu-toggle {
   display: none;
   background: var(--surface-white);
@@ -365,12 +378,12 @@ a {
 }
 
 .header-tools .btn {
-  min-width: 158px;
-  max-width: none;
+  min-width: 118px;
+  max-width: 128px;
   white-space: nowrap;
   text-wrap: nowrap;
-  font-size: 13px;
-  padding: 0 20px 18px;
+  font-size: 12px;
+  padding: 0 14px 14px;
 }
 
 .header-tools .btn::before {
@@ -521,6 +534,8 @@ a {
 .hero--full .hero-actions {
   margin: 0;
   flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
 }
 
 .hero--full .hero-cta {
@@ -3393,14 +3408,16 @@ a.breed-card:hover {
     justify-content: center;
   }
 
-  .phone {
-    font-size: 13px;
+  .phone,
+  .channel-link {
+    font-size: 12px;
   }
 
   .header-tools .btn {
-    min-width: 124px;
-    padding: 0 12px 12px;
-    font-size: 12px;
+    min-width: 72px;
+    max-width: 80px;
+    padding: 0 8px 8px;
+    font-size: 11px;
   }
 
   .hero--full {
