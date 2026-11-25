@@ -253,6 +253,7 @@
       var cards = originals.slice();
       var wide = window.matchMedia("(min-width: 801px)");
       var pointer = null;
+      var pressedCard = null;
       var moved = 0;
       var loopSpan = 0;
       var wrapping = false;
@@ -404,32 +405,34 @@
       }, { passive: true });
 
       drag.addEventListener("pointerdown", function (event) {
-        if (!wide.matches) return;
+        if (event.button !== 0) return;
+        pressedCard = event.target.closest(".work-card");
         pointer = { id: event.pointerId, x: event.clientX, left: drag.scrollLeft };
         moved = 0;
-        drag.classList.add("is-grabbing");
-        drag.setPointerCapture(event.pointerId);
+        if (wide.matches) drag.setPointerCapture(event.pointerId);
       });
       drag.addEventListener("pointermove", function (event) {
-        if (!pointer || pointer.id !== event.pointerId) return;
+        if (!pointer || pointer.id !== event.pointerId || !wide.matches) return;
         var dx = event.clientX - pointer.x;
-        moved = Math.max(moved, Math.abs(dx));
+        if (Math.abs(dx) < 10) return;
+        moved = Math.abs(dx);
+        drag.classList.add("is-grabbing");
         drag.scrollLeft = pointer.left - dx;
       });
       function endPointer(event) {
         if (!pointer || pointer.id !== event.pointerId) return;
+        var card = pressedCard;
+        var dragged = moved >= 10;
         pointer = null;
+        pressedCard = null;
+        moved = 0;
         drag.classList.remove("is-grabbing");
+        if (dragged || !card) return;
+        var index = cards.indexOf(card);
+        showOpen(index < 0 ? 0 : index % originals.length);
       }
       drag.addEventListener("pointerup", endPointer);
       drag.addEventListener("pointercancel", endPointer);
-      drag.addEventListener("click", function (event) {
-        if (moved > 8) return;
-        var card = event.target.closest(".work-card");
-        if (!card) return;
-        var index = cards.indexOf(card);
-        showOpen(index < 0 ? 0 : index % originals.length);
-      });
       drag.addEventListener("wheel", function (event) {
         if (!wide.matches) return;
         event.preventDefault();
