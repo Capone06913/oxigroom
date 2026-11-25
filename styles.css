@@ -282,7 +282,7 @@ a {
 
 .btn::before {
   content: "";
-  flex: 0 0 63%;
+  flex: 0 0 80%;
   width: 100%;
 }
 
@@ -378,7 +378,7 @@ a {
 }
 
 .header-tools .btn::before {
-  flex-basis: 64%;
+  flex-basis: 78%;
 }
 
 .btn svg {
@@ -540,7 +540,7 @@ a {
 }
 
 .hero--full .hero-cta::before {
-  flex-basis: 64%;
+  flex-basis: 78%;
 }
 
 .hero {
@@ -985,6 +985,165 @@ a {
 
 .poster--w3 .poster-body h3 {
   font-size: clamp(22px, 1.9vw, 28px);
+}
+
+.section-more {
+  flex: 0 0 auto;
+  color: var(--link);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10, 101, 112, 0.35);
+}
+
+.section-more:hover {
+  color: var(--primary-hover);
+}
+
+.works-view {
+  width: min(1200px, calc(100% - 48px));
+  margin: 28px auto 0;
+}
+
+.works-stage {
+  position: relative;
+  height: min(520px, 58vh);
+  min-height: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #1a1814;
+}
+
+.works-frame {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.works-frame img,
+.works-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  background: #1a1814;
+}
+
+.works-frame [hidden] {
+  display: none;
+}
+
+.works-frame figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(26, 24, 20, 0.62);
+  color: #fff;
+  font: 800 14px/1 "Manrope", sans-serif;
+}
+
+.works-frame.is-video figcaption {
+  top: 16px;
+  bottom: auto;
+}
+
+.works-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.works-arrow--prev { left: 14px; }
+.works-arrow--next { right: 14px; }
+
+.works-film {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(12, 110, 120, 0.45) transparent;
+}
+
+.works-thumb {
+  position: relative;
+  flex: 0 0 84px;
+  height: 84px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--quiet);
+  cursor: pointer;
+  scroll-snap-align: center;
+  transition: flex-basis 0.35s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+.works-thumb.is-on {
+  flex-basis: 156px;
+  border-color: var(--primary);
+}
+
+.works-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.works-thumb-play {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+}
+
+.works-thumb-play::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #1a1814;
+}
+
+@media (max-width: 800px) {
+  .works-stage {
+    height: 46vh;
+    min-height: 240px;
+  }
+
+  .works-thumb,
+  .works-thumb.is-on {
+    flex-basis: 72px;
+    height: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-thumb {
+    transition: none;
+  }
 }
 
 /* ===== BEFORE / AFTER — HORIZONTAL REEL & LIGHTBOX ===== */
@@ -1911,6 +2070,142 @@ body.ba-lb-open {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* Блок обучения: плотная карточка, без растягивания на весь экран */
+@media (min-width: 1101px) {
+  #obuchenie.section {
+    box-sizing: border-box;
+    height: auto;
+    max-height: none;
+    padding: 28px 0 40px;
+    overflow: visible;
+    display: block;
+    scroll-margin-top: 136px;
+  }
+
+  #obuchenie > .wrap {
+    display: block;
+    height: auto;
+  }
+
+  #obuchenie .school {
+    height: auto;
+    align-items: stretch;
+    gap: 16px;
+    grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+  }
+
+  #obuchenie .school-media,
+  #obuchenie .school-panel {
+    min-height: 0;
+    height: auto;
+  }
+
+  #obuchenie .school-media {
+    height: 100%;
+    gap: 10px;
+  }
+
+  #obuchenie .trainer-card {
+    flex: 1 1 auto;
+    min-height: 240px;
+  }
+
+  #obuchenie .trainer-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center 16%;
+  }
+
+  #obuchenie .trainer-card figcaption {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  #obuchenie .hands-block {
+    flex: 0 0 auto;
+    padding: 10px;
+  }
+
+  #obuchenie .hands-label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  #obuchenie .hands-grid {
+    gap: 8px;
+  }
+
+  #obuchenie .hands-grid img {
+    height: 86px;
+    aspect-ratio: auto;
+  }
+
+  #obuchenie .school-panel {
+    padding: 22px 22px 16px;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  #obuchenie .school-panel h2 {
+    font-size: clamp(28px, 2.2vw, 36px);
+    line-height: 1.05;
+  }
+
+  #obuchenie .school-intro {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  #obuchenie .format-list {
+    flex: 0 0 auto;
+    display: block;
+  }
+
+  #obuchenie .format-link {
+    padding: 9px 6px;
+    gap: 12px;
+  }
+
+  #obuchenie .format-link strong {
+    font-size: 16px;
+  }
+
+  #obuchenie .format-link span {
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  #obuchenie .school-honest {
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  #obuchenie .school-actions {
+    gap: 4px;
+    margin-top: -4px;
+  }
+
+  #obuchenie .school-actions .btn {
+    min-width: 118px;
+    max-width: 126px;
+    padding: 0 14px 8px;
+    font-size: 11px;
+  }
+
+  #obuchenie .school-actions .btn::before {
+    flex-basis: 62%;
+  }
 }
 
 /* ===== FAQ ===== */
