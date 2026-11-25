@@ -1169,21 +1169,26 @@ a {
   }
 
   .works-drag {
-    flex-direction: column;
-    align-items: stretch;
-    overflow: visible;
-    padding: 12px 16px 0;
-    cursor: auto;
-    scroll-snap-type: none;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 68vh;
+    padding: 8px 12vw;
+    gap: 14px;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
   }
 
   .work-card,
   .work-card.is-near,
   .work-card.is-center {
-    flex: none;
-    width: 100%;
-    height: 68vh;
-    margin: 0 0 16px;
+    flex: 0 0 78vw;
+    width: 78vw;
+    height: 100%;
+    margin: 0;
+    scroll-snap-align: center;
     transform: none;
     opacity: 1;
   }
@@ -1201,11 +1206,20 @@ a {
   place-items: center;
   padding: 72px 88px 56px;
   background: rgba(17, 24, 26, 0.92);
+  touch-action: none;
 }
 
 .work-open[hidden],
 .work-open [hidden] {
   display: none;
+}
+
+.work-card img,
+.work-card video,
+.work-open img,
+.work-open video {
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .work-open figure {
@@ -2105,11 +2119,126 @@ body.ba-lb-open {
   gap: 10px;
 }
 
+.hands-shot {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: none;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.hands-shot:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .hands-grid img {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 14px;
+  cursor: zoom-in;
+}
+
+.hands-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 76px 72px;
+}
+
+.hands-lightbox[hidden] {
+  display: none;
+}
+
+body.hands-lb-open {
+  overflow: hidden;
+}
+
+.hands-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 16, 18, 0.9);
+}
+
+.hands-lightbox-figure {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: min(1080px, 100%);
+  max-height: calc(100vh - 120px);
+}
+
+.hands-lightbox-figure img {
+  display: block;
+  width: min(980px, 88vw);
+  height: min(82vh, 820px);
+  object-fit: contain;
+  border-radius: 16px;
+  background: #11181a;
+}
+
+.hands-lightbox-caption {
+  margin: 10px 0 0;
+  color: #F7F6F3;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hands-lightbox-close,
+.hands-lightbox-arrow {
+  position: fixed;
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hands-lightbox-close {
+  top: 18px;
+  right: 18px;
+}
+
+.hands-lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hands-lightbox-arrow--prev {
+  left: 16px;
+}
+
+.hands-lightbox-arrow--next {
+  right: 16px;
+}
+
+.hands-lightbox-close svg,
+.hands-lightbox-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hands-lightbox-close:focus-visible,
+.hands-lightbox-arrow:focus-visible {
+  outline: 3px solid var(--primary-vivid);
+  outline-offset: 2px;
 }
 
 .school-panel {
