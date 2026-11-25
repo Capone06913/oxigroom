@@ -129,7 +129,7 @@
           <a class="back-link" href="index.html">← На главную ОксиГрум</a>
           <h1>Работы груминг-салона ОксиГрум в Саратове</h1>
         </div>
-        <p>Йорк, шпиц, пудель, болонка, чихуахуа, такса, ши-тцу, самоед, лабрадор и кошка. Потяните кадры — центральный раскроется.</p>
+        <p>Йорк, шпиц, пудель, болонка, чихуахуа, такса, ши-тцу, самоед, лабрадор и кошка. Лента идёт по кругу, нажатие открывает кадр.</p>
       </div>
       <div class="works-drag" id="works-drag">
         <article class="work-card">
@@ -226,26 +226,97 @@
     </section>
   </main>
 
+  <div class="work-open" id="work-open" hidden>
+    <button class="work-open-close" type="button" data-work-close>Закрыть</button>
+    <button class="work-open-nav work-open-prev" type="button" data-work-prev aria-label="Предыдущий кадр">
+      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <figure>
+      <img id="work-open-img" alt="">
+      <video id="work-open-video" hidden playsinline controls></video>
+      <figcaption id="work-open-cap"></figcaption>
+    </figure>
+    <button class="work-open-nav work-open-next" type="button" data-work-next aria-label="Следующий кадр">
+      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
   <script>
     (function () {
       var drag = document.getElementById("works-drag");
-      if (!drag) return;
-      var cards = Array.prototype.slice.call(drag.querySelectorAll(".work-card"));
+      var viewer = document.getElementById("work-open");
+      if (!drag || !viewer) return;
+      var viewImg = document.getElementById("work-open-img");
+      var viewVideo = document.getElementById("work-open-video");
+      var viewCap = document.getElementById("work-open-cap");
+      var originals = Array.prototype.slice.call(drag.querySelectorAll(".work-card"));
+      var cards = originals.slice();
       var wide = window.matchMedia("(min-width: 801px)");
       var pointer = null;
       var moved = 0;
+      var loopSpan = 0;
+      var wrapping = false;
+      var openIndex = 0;
 
       function headerHeight() {
         var header = document.querySelector(".header");
         if (header) document.documentElement.style.setProperty("--works-head", header.offsetHeight + "px");
       }
 
+      function refreshCards() {
+        cards = Array.prototype.slice.call(drag.querySelectorAll(".work-card"));
+      }
+
+      function buildLoop() {
+        if (!wide.matches || drag.getAttribute("data-loop") === "1") return;
+        var before = document.createDocumentFragment();
+        var after = document.createDocumentFragment();
+        originals.forEach(function (card) {
+          var left = card.cloneNode(true);
+          var right = card.cloneNode(true);
+          left.classList.remove("is-center", "is-near");
+          right.classList.remove("is-center", "is-near");
+          before.appendChild(left);
+          after.appendChild(right);
+        });
+        drag.insertBefore(before, drag.firstChild);
+        drag.appendChild(after);
+        drag.setAttribute("data-loop", "1");
+        refreshCards();
+        measure();
+      }
+
+      function measure() {
+        var count = originals.length;
+        var middle = cards[count];
+        var next = cards[count * 2];
+        if (!middle || !next) return;
+        loopSpan = next.offsetLeft - middle.offsetLeft;
+      }
+
       function centerLeft(card) {
         return card.offsetLeft - (drag.clientWidth - card.offsetWidth) / 2;
       }
 
+      function wrap() {
+        if (!wide.matches || !loopSpan || wrapping) return;
+        var count = originals.length;
+        var middleLeft = cards[count].offsetLeft;
+        var edge = drag.clientWidth * 0.75;
+        if (drag.scrollLeft < middleLeft - edge) {
+          wrapping = true;
+          drag.scrollLeft += loopSpan;
+          wrapping = false;
+        } else if (drag.scrollLeft > middleLeft + loopSpan - edge) {
+          wrapping = true;
+          drag.scrollLeft -= loopSpan;
+          wrapping = false;
+        }
+      }
+
       function closest() {
         if (!wide.matches) return;
+        wrap();
         var mid = drag.getBoundingClientRect().left + drag.clientWidth / 2;
         var best = cards[0];
         var bestDist = Infinity;
@@ -259,13 +330,14 @@
           return dist;
         });
         cards.forEach(function (card, index) {
-          card.classList.toggle("is-center", card === best);
-          card.classList.toggle("is-near", card !== best && dists[index] < drag.clientWidth * 0.34);
+          var on = card === best;
+          card.classList.toggle("is-center", on);
+          card.classList.toggle("is-near", !on && dists[index] < drag.clientWidth * 0.34);
           var video = card.querySelector("video");
           if (!video) return;
-          var on = card === best;
-          video.controls = on;
-          if (on) {
+          var playHere = on && viewer.hidden;
+          video.controls = false;
+          if (playHere) {
             video.muted = true;
             var play = video.play();
             if (play && play.catch) play.catch(function () {});
@@ -273,6 +345,52 @@
             video.pause();
           }
         });
+      }
+
+      function sourceOf(card) {
+        var image = card.querySelector("img");
+        var video = card.querySelector("video");
+        var name = card.querySelector(".work-card-name");
+        return {
+          kind: video ? "video" : "photo",
+          src: video ? video.getAttribute("src") : image.getAttribute("src"),
+          poster: video ? video.getAttribute("poster") || "" : "",
+          alt: video ? video.getAttribute("aria-label") || "" : image.getAttribute("alt") || "",
+          cap: name ? name.textContent : ""
+        };
+      }
+
+      function showOpen(index) {
+        openIndex = (index + originals.length) % originals.length;
+        var data = sourceOf(originals[openIndex]);
+        viewCap.textContent = data.cap;
+        if (data.kind === "video") {
+          viewImg.hidden = true;
+          viewVideo.hidden = false;
+          viewVideo.poster = data.poster;
+          if (viewVideo.getAttribute("src") !== data.src) viewVideo.src = data.src;
+          viewVideo.muted = false;
+          var play = viewVideo.play();
+          if (play && play.catch) play.catch(function () {});
+        } else {
+          viewVideo.pause();
+          viewVideo.removeAttribute("src");
+          viewVideo.load();
+          viewVideo.hidden = true;
+          viewImg.hidden = false;
+          viewImg.src = data.src;
+          viewImg.alt = data.alt;
+        }
+        viewer.hidden = false;
+        document.body.style.overflow = "hidden";
+        closest();
+      }
+
+      function closeOpen() {
+        viewer.hidden = true;
+        viewVideo.pause();
+        document.body.style.overflow = "";
+        closest();
       }
 
       var ticking = false;
@@ -287,7 +405,6 @@
 
       drag.addEventListener("pointerdown", function (event) {
         if (!wide.matches) return;
-        if (event.target.closest("video") && event.target.closest(".is-center")) return;
         pointer = { id: event.pointerId, x: event.clientX, left: drag.scrollLeft };
         moved = 0;
         drag.classList.add("is-grabbing");
@@ -307,28 +424,44 @@
       drag.addEventListener("pointerup", endPointer);
       drag.addEventListener("pointercancel", endPointer);
       drag.addEventListener("click", function (event) {
-        if (!wide.matches || moved > 8) return;
+        if (moved > 8) return;
         var card = event.target.closest(".work-card");
-        if (!card || card.classList.contains("is-center")) return;
-        drag.scrollTo({ left: Math.max(0, centerLeft(card)), behavior: "smooth" });
+        if (!card) return;
+        var index = cards.indexOf(card);
+        showOpen(index < 0 ? 0 : index % originals.length);
       });
       drag.addEventListener("wheel", function (event) {
         if (!wide.matches) return;
-        var max = drag.scrollWidth - drag.clientWidth;
-        var delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
-        var next = delta > 0;
-        var can = (next && drag.scrollLeft < max - 2) || (!next && drag.scrollLeft > 2);
-        if (!can) return;
         event.preventDefault();
+        var delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
         drag.scrollLeft += delta;
       }, { passive: false });
+
+      viewer.addEventListener("click", function (event) {
+        if (event.target === viewer || event.target.closest("[data-work-close]")) closeOpen();
+      });
+      document.querySelector("[data-work-prev]").addEventListener("click", function (event) {
+        event.stopPropagation();
+        showOpen(openIndex - 1);
+      });
+      document.querySelector("[data-work-next]").addEventListener("click", function (event) {
+        event.stopPropagation();
+        showOpen(openIndex + 1);
+      });
       document.addEventListener("keydown", function (event) {
-        if (!wide.matches) return;
-        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
         var tag = event.target && event.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
-        var current = drag.querySelector(".is-center") || cards[0];
-        var next = cards[cards.indexOf(current) + (event.key === "ArrowRight" ? 1 : -1)];
+        if (!viewer.hidden) {
+          if (event.key === "Escape") closeOpen();
+          if (event.key === "ArrowRight") showOpen(openIndex + 1);
+          if (event.key === "ArrowLeft") showOpen(openIndex - 1);
+          return;
+        }
+        if (!wide.matches) return;
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        var current = drag.querySelector(".is-center") || cards[originals.length];
+        var step = event.key === "ArrowRight" ? 1 : -1;
+        var next = cards[cards.indexOf(current) + step];
         if (!next) return;
         event.preventDefault();
         drag.scrollTo({ left: Math.max(0, centerLeft(next)), behavior: "smooth" });
@@ -336,17 +469,19 @@
 
       headerHeight();
       if (wide.matches) {
-        var start = cards[1] || cards[0];
+        buildLoop();
+        var start = cards[originals.length + 1] || cards[originals.length];
         drag.scrollLeft = Math.max(0, centerLeft(start));
         closest();
       } else {
-        cards.forEach(function (card) {
+        originals.forEach(function (card) {
           var video = card.querySelector("video");
           if (video) video.controls = true;
         });
       }
       window.addEventListener("resize", function () {
         headerHeight();
+        measure();
         if (wide.matches) closest();
       });
     })();
