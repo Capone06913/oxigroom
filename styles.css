@@ -478,6 +478,7 @@ a {
 
 .hero--full .hero-copy h1 {
   margin: 0 0 12px;
+  transform: translateY(50px);
   font-family: "Unbounded", "Manrope", sans-serif;
   font-size: clamp(52px, 5.6vw, 88px);
   font-weight: 700;
@@ -4130,6 +4131,7 @@ a.breed-card:hover {
 
   .hero--full .hero-copy h1 {
     margin: 0 0 10px;
+    transform: none;
     font-size: clamp(36px, 9.6vw, 44px);
     line-height: 0.94;
     letter-spacing: 0;
