@@ -420,11 +420,9 @@ a {
 .hero--full {
   position: relative;
   width: 100%;
-  height: calc(100vh - 210px);
-  height: calc(100svh - 210px);
-  min-height: 0;
-  max-height: calc(100vh - 210px);
-  max-height: calc(100svh - 210px);
+  height: calc(100vh - 101px);
+  min-height: calc(100vh - 101px);
+  max-height: none;
   margin: 0;
   display: flex;
   align-items: stretch;
@@ -464,7 +462,7 @@ a {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) 40px;
+  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) 88px;
 }
 
 .hero--full .hero-copy {
@@ -4100,6 +4098,7 @@ a.breed-card:hover {
   .hero--full {
     height: auto;
     min-height: min(90dvh, 700px);
+    max-height: none;
     background: #0D1416;
   }
 
