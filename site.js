@@ -187,7 +187,7 @@
     function openReview(card) {
       if (!dialog || !card) return;
       var name = card.querySelector('strong');
-      var source = card.querySelector('footer span');
+      var source = card.querySelector('.fan-src');
       var text = card.querySelector('p');
       dialog.querySelector('[data-review-name]').textContent = name ? name.textContent : '';
       dialog.querySelector('[data-review-source]').textContent = source ? source.textContent : '';
@@ -203,8 +203,76 @@
       layout();
     }
 
+    var stage = fan.querySelector('.fan-stage');
+    var pull = null;
+    var pulled = false;
+
+    function setDrag(card, px) {
+      cards.forEach(function (item) {
+        item.style.setProperty('--drag', '0px');
+        item.classList.remove('is-dragging');
+      });
+      if (!card || !px) return;
+      card.style.setProperty('--drag', px + 'px');
+      card.classList.add('is-dragging');
+    }
+
+    if (stage) {
+      stage.addEventListener('pointerdown', function (event) {
+        if (event.button !== 0) return;
+        var card = event.target.closest('.fan-card');
+        if (!card) return;
+        pull = {
+          id: event.pointerId,
+          x: event.clientX,
+          dx: 0,
+          card: card
+        };
+        pulled = false;
+        event.preventDefault();
+      });
+    }
+
+    window.addEventListener('pointermove', function (event) {
+      if (!pull || pull.id !== event.pointerId) return;
+      pull.dx = event.clientX - pull.x;
+      if (Math.abs(pull.dx) > 8) pulled = true;
+      setDrag(pull.card, pull.dx);
+    });
+
+    function endPull(event) {
+      if (!pull || pull.id !== event.pointerId) return;
+      var dx = pull.dx;
+      var card = pull.card;
+      var index = cards.indexOf(card);
+      pull = null;
+      setDrag(null, 0);
+      if (Math.abs(dx) < 12) {
+        if (offsetOf(index) === 0) openReview(card);
+        else {
+          active = index;
+          layout();
+        }
+        return;
+      }
+      if (offsetOf(index) === 0) {
+        if (dx <= -48) step(1);
+        else if (dx >= 48) step(-1);
+        return;
+      }
+      active = index;
+      layout();
+    }
+
+    window.addEventListener('pointerup', endPull);
+    window.addEventListener('pointercancel', endPull);
+
     cards.forEach(function (card, index) {
       card.addEventListener('click', function () {
+        if (pulled) {
+          pulled = false;
+          return;
+        }
         if (offsetOf(index) === 0) openReview(card);
         else {
           active = index;
@@ -344,6 +412,29 @@
       event.preventDefault();
       show(index - 1);
     }
+  });
+})();
+
+(function () {
+  var nodes = document.querySelectorAll('[data-count]');
+  if (!nodes.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  nodes.forEach(function (node) {
+    var target = parseInt(node.getAttribute('data-count'), 10);
+    if (!target || reduce) {
+      node.textContent = String(target || node.textContent);
+      return;
+    }
+    var start = performance.now();
+    var dur = 700;
+    function tick(now) {
+      var t = Math.min(1, (now - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = String(Math.round(target * eased));
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    node.textContent = '0';
+    requestAnimationFrame(tick);
   });
 })();
 
