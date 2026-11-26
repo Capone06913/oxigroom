@@ -462,7 +462,7 @@ a {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) 36px;
+  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) 16px;
 }
 
 .hero--full .hero-copy {
@@ -477,8 +477,8 @@ a {
 }
 
 .hero--full .hero-copy h1 {
-  margin: 0 0 12px;
-  transform: translateY(50px);
+  margin: 0;
+  transform: none;
   font-family: "Unbounded", "Manrope", sans-serif;
   font-size: clamp(52px, 5.6vw, 88px);
   font-weight: 700;
@@ -498,16 +498,19 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 16px;
 }
 
 .hero--full .hero-meta {
   flex: 0 1 760px;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .hero--full .hero-sub {
-  margin: 0 0 5px;
+  margin: 0;
   font-size: clamp(19px, 1.5vw, 23px);
   font-weight: 800;
   line-height: 1.2;
@@ -4132,7 +4135,7 @@ a.breed-card:hover {
   }
 
   .hero--full .hero-copy h1 {
-    margin: 0 0 10px;
+    margin: 0;
     transform: none;
     font-size: clamp(36px, 9.6vw, 44px);
     line-height: 0.94;
@@ -4143,11 +4146,15 @@ a.breed-card:hover {
   .hero--full .hero-bottom {
     flex-direction: column;
     align-items: stretch;
-    gap: 14px;
+    gap: 16px;
+  }
+
+  .hero--full .hero-meta {
+    gap: 16px;
   }
 
   .hero--full .hero-sub {
-    margin: 0 0 6px;
+    margin: 0;
     font-size: 17px;
     line-height: 1.24;
     max-width: 44ch;
