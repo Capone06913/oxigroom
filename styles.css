@@ -462,22 +462,22 @@ a {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) clamp(52px, 6vh, 72px);
+  padding: clamp(20px, 3vh, 32px) clamp(24px, 3vw, 48px) clamp(64px, 8vh, 96px);
 }
 
 .hero--full .hero-copy {
-  width: min(1180px, 100%);
+  width: min(1080px, 100%);
   max-width: 100%;
   padding: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  column-gap: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .hero--full .hero-copy h1 {
-  display: contents;
-  margin: 0;
+  margin: 0 0 12px;
   font-family: "Unbounded", "Manrope", sans-serif;
   font-size: clamp(52px, 5.6vw, 88px);
   font-weight: 700;
@@ -488,43 +488,16 @@ a {
   text-shadow: 0 6px 28px rgba(13, 20, 22, 0.62);
 }
 
-.hero--full .hero-title,
 .hero--full .hero-accent {
-  font-family: "Unbounded", "Manrope", sans-serif;
-  font-size: clamp(52px, 5.6vw, 88px);
-  font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: 0;
-  color: #FFFFFF;
-  text-shadow: 0 6px 28px rgba(13, 20, 22, 0.62);
-}
-
-.hero--full .hero-title--top {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.hero--full .hero-title--city {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.hero--full .hero-accent {
-  grid-column: 2;
-  grid-row: 3;
-  align-self: end;
   color: #4CE5EE;
 }
 
 .hero--full .hero-bottom {
-  grid-column: 1;
-  grid-row: 3;
   width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   gap: 40px;
-  margin-top: 18px;
 }
 
 .hero--full .hero-meta {
@@ -554,10 +527,8 @@ a {
 }
 
 .hero--full .hero-actions {
-  grid-column: 2;
-  grid-row: 4;
-  justify-self: end;
-  margin: 10px 0 0;
+  margin: 0;
+  flex: 0 0 auto;
   display: flex;
   align-items: flex-end;
 }
@@ -4151,8 +4122,6 @@ a.breed-card:hover {
   }
 
   .hero--full .hero-copy {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 100%;
     justify-content: flex-end;
@@ -4160,7 +4129,6 @@ a.breed-card:hover {
   }
 
   .hero--full .hero-copy h1 {
-    display: block;
     margin: 0 0 10px;
     font-size: clamp(36px, 9.6vw, 44px);
     line-height: 0.94;
@@ -4168,23 +4136,7 @@ a.breed-card:hover {
     word-spacing: normal;
   }
 
-  .hero--full .hero-title,
-  .hero--full .hero-accent {
-    display: inline;
-    grid-column: auto;
-    grid-row: auto;
-    font-size: inherit;
-    line-height: inherit;
-  }
-
-  .hero--full .hero-title--city::before,
-  .hero--full .hero-accent::before {
-    content: " ";
-  }
-
   .hero--full .hero-bottom {
-    display: block;
-    margin-top: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 14px;
@@ -4206,7 +4158,6 @@ a.breed-card:hover {
 
   .hero--full .hero-actions {
     width: 100%;
-    margin-top: 0;
   }
 
   .hero--full .hero-cta {
